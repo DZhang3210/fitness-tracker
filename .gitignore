@@ -16,8 +16,6 @@ dist/
 .env.test.local
 .env.production.local
 
-# Convex
-convex/_generated/
 
 # debug logs
 npm-debug.log*
@@ -42,3 +40,6 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+#Generated Files
+convex/_generated/
