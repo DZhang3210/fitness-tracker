@@ -7,11 +7,11 @@ import {
 const isSignInPage = createRouteMatcher(["/signin"]);
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/exercises(.*)", "/schedule(.*)"]);
 
-export default convexAuthNextjsMiddleware((request, { convexAuth }) => {
-  if (isSignInPage(request) && convexAuth.isAuthenticated()) {
+export default convexAuthNextjsMiddleware(async (request, { convexAuth }) => {
+  if (isSignInPage(request) && (await convexAuth.isAuthenticated())) {
     return nextjsMiddlewareRedirect(request, "/dashboard");
   }
-  if (isProtectedRoute(request) && !convexAuth.isAuthenticated()) {
+  if (isProtectedRoute(request) && !(await convexAuth.isAuthenticated())) {
     return nextjsMiddlewareRedirect(request, "/");
   }
 });
