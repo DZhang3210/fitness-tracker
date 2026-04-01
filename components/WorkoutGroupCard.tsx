@@ -17,6 +17,7 @@ import {
   Dumbbell,
   Calendar,
   Plus,
+  AlertTriangle,
 } from "lucide-react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -83,57 +84,114 @@ export function SortableExerciseItem({
   };
 
   const [editingExercise, setEditingExercise] = useState<Exercise | null>(null);
+  // Per-session confirmation state: null = not pending, ge._id = pending confirmation
+  const [pendingDelete, setPendingDelete] = useState(false);
+  const [deleteChecked, setDeleteChecked] = useState(false);
   const removeExercise = useMutation(api.workoutGroups.removeExercise);
   const exercise = ge.pinned ? getExercise(ge.pinned.exerciseId) : null;
 
   if (!exercise || !ge.pinned) return null;
+
+  const handleRemoveClick = () => {
+    setPendingDelete(true);
+    setDeleteChecked(false);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!deleteChecked) return;
+    await removeExercise({ workoutGroupExerciseId: ge._id });
+  };
+
+  const handleCancelDelete = () => {
+    setPendingDelete(false);
+    setDeleteChecked(false);
+  };
 
   return (
     <>
       <div
         ref={setNodeRef}
         style={style}
-        className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl p-2.5 group/item"
+        className="bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden"
       >
-        <button
-          {...attributes}
-          {...listeners}
-          className="p-1 text-gray-300 hover:text-gray-500 cursor-grab active:cursor-grabbing"
-        >
-          <GripVertical className="w-3.5 h-3.5" />
-        </button>
+        {pendingDelete ? (
+          /* Confirmation UI */
+          <div className="p-3 space-y-2">
+            <div className="flex items-center gap-1.5 text-red-600 dark:text-red-400">
+              <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0" />
+              <p className="text-xs font-medium">Remove &ldquo;{exercise.name}&rdquo;?</p>
+            </div>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={deleteChecked}
+                onChange={(e) => setDeleteChecked(e.target.checked)}
+                className="w-3.5 h-3.5 rounded border-gray-300 text-red-500 focus:ring-red-400 cursor-pointer"
+              />
+              <span className="text-[11px] text-gray-600 dark:text-gray-400">I&apos;m sure, remove this exercise</span>
+            </label>
+            <div className="flex gap-1.5">
+              <button
+                onClick={handleConfirmDelete}
+                disabled={!deleteChecked}
+                className="flex-1 py-1.5 bg-red-500 hover:bg-red-400 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg text-xs font-medium transition-colors"
+              >
+                Remove
+              </button>
+              <button
+                onClick={handleCancelDelete}
+                className="flex-1 py-1.5 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg text-xs transition-colors"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        ) : (
+          /* Normal view */
+          <div className="flex items-center gap-2 p-2.5">
+            <button
+              {...attributes}
+              {...listeners}
+              className="p-1 text-gray-300 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-400 cursor-grab active:cursor-grabbing flex-shrink-0"
+            >
+              <GripVertical className="w-3.5 h-3.5" />
+            </button>
 
-        <div className="flex-1 min-w-0">
-          <p className="text-xs font-medium text-gray-900 truncate">{exercise.name}</p>
-          <div className="flex items-center gap-2 flex-wrap mt-0.5">
-            {ge.pinned.resistance !== undefined && (
-              <div className="flex items-center gap-1">
-                <Dumbbell className="w-2.5 h-2.5 text-emerald-500" />
-                <span className="text-[10px] text-emerald-600 font-medium">
-                  {ge.pinned.resistance} {ge.pinned.resistanceUnit ?? "lbs"}
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-medium text-gray-900 dark:text-gray-100 truncate">{exercise.name}</p>
+              <div className="flex items-center gap-2 flex-wrap mt-0.5">
+                {ge.pinned.resistance !== undefined && (
+                  <div className="flex items-center gap-1">
+                    <Dumbbell className="w-2.5 h-2.5 text-emerald-500 dark:text-emerald-400" />
+                    <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">
+                      {ge.pinned.resistance} {ge.pinned.resistanceUnit ?? "lbs"}
+                    </span>
+                  </div>
+                )}
+                <span className="text-[10px] text-indigo-600 dark:text-indigo-400 font-medium">
+                  {ge.pinned.sets ?? 3}×{ge.pinned.reps ?? "—"}
                 </span>
               </div>
-            )}
-            <span className="text-[10px] text-indigo-600 font-medium">
-              {ge.pinned.sets ?? 3}×{ge.pinned.reps ?? "—"}
-            </span>
-          </div>
-        </div>
+            </div>
 
-        <div className="flex items-center gap-0.5 opacity-0 group-hover/item:opacity-100 transition-all">
-          <button
-            onClick={() => setEditingExercise(exercise)}
-            className="p-1 text-gray-300 hover:text-indigo-500"
-          >
-            <Pencil className="w-3 h-3" />
-          </button>
-          <button
-            onClick={() => removeExercise({ workoutGroupExerciseId: ge._id })}
-            className="p-1 text-gray-300 hover:text-red-500"
-          >
-            <X className="w-3.5 h-3.5" />
-          </button>
-        </div>
+            <div className="flex items-center gap-1 flex-shrink-0">
+              <button
+                onClick={() => setEditingExercise(exercise)}
+                title="Edit weight/sets/reps"
+                className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950 transition-colors"
+              >
+                <Pencil className="w-4 h-4" />
+              </button>
+              <button
+                onClick={handleRemoveClick}
+                title="Remove from workout"
+                className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950 transition-colors"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {editingExercise && ge.pinned && (
@@ -191,7 +249,6 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
   const [showAddModal, setShowAddModal] = useState(false);
 
   const user = useQuery(api.users.currentUser);
-  const pinnedExercises = useQuery(api.pinnedExercises.list);
 
   const updateGroup = useMutation(api.workoutGroups.update);
   const removeGroup = useMutation(api.workoutGroups.remove);
@@ -227,19 +284,26 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
     );
   };
 
+  // Build set of existing exercise IDs in this group for the AddExerciseModal
+  const existingExerciseIds = new Set(
+    group.exercises
+      .filter((ge) => ge.pinned)
+      .map((ge) => ge.pinned!.exerciseId)
+  );
+
   return (
     <>
       <div
         ref={setNodeRef}
         style={style}
-        className={`bg-white border border-gray-200 rounded-2xl overflow-hidden border-l-4 ${colorClass} shadow-sm`}
+        className={`bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden border-l-4 ${colorClass} shadow-sm`}
       >
         {/* Header */}
         <div className="p-3 flex items-center gap-2">
           <button
             {...attributes}
             {...listeners}
-            className="p-1 text-gray-300 hover:text-gray-500 cursor-grab active:cursor-grabbing flex-shrink-0"
+            className="p-1 text-gray-300 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-400 cursor-grab active:cursor-grabbing flex-shrink-0"
           >
             <GripVertical className="w-4 h-4" />
           </button>
@@ -251,7 +315,7 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && saveEdit()}
-                className="bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 focus:outline-none focus:border-indigo-400 w-full"
+                className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-2.5 py-1.5 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500 w-full"
               />
               <div className="flex gap-1">
                 {DAY_LABELS.map((label, d) => (
@@ -261,7 +325,7 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
                     className={`flex-1 text-[10px] py-1 rounded-md font-medium transition-colors ${
                       days.includes(d)
                         ? "bg-indigo-600 text-white"
-                        : "bg-gray-100 text-gray-400 hover:bg-gray-200"
+                        : "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700"
                     }`}
                   >
                     {label[0]}
@@ -277,7 +341,7 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
                 </button>
                 <button
                   onClick={() => { setEditing(false); setTitle(group.title); setDays(group.daysOfWeek); }}
-                  className="flex-1 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-xs text-gray-600 transition-colors"
+                  className="flex-1 py-1 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg text-xs text-gray-600 dark:text-gray-400 transition-colors"
                 >
                   Cancel
                 </button>
@@ -286,11 +350,11 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
           ) : (
             <>
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-sm text-gray-900 truncate">{group.title}</h3>
+                <h3 className="font-semibold text-sm text-gray-900 dark:text-gray-100 truncate">{group.title}</h3>
                 {group.daysOfWeek.length > 0 && (
                   <div className="flex items-center gap-1 mt-0.5">
-                    <Calendar className="w-3 h-3 text-gray-400" />
-                    <span className="text-[10px] text-gray-400">
+                    <Calendar className="w-3 h-3 text-gray-400 dark:text-gray-500" />
+                    <span className="text-[10px] text-gray-400 dark:text-gray-500">
                       {group.daysOfWeek
                         .sort()
                         .map((d) => DAY_LABELS[d])
@@ -302,13 +366,13 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
               <div className="flex items-center gap-1 flex-shrink-0">
                 <button
                   onClick={() => setEditing(true)}
-                  className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+                  className="p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   <Pencil className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => removeGroup({ groupId: group._id })}
-                  className="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors"
+                  className="p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950 transition-colors"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
@@ -328,13 +392,13 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
 
           <button
             onClick={() => setShowAddModal(true)}
-            className="w-full flex items-center justify-center gap-1.5 mt-2 py-2 text-xs text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 rounded-xl border border-dashed border-indigo-200 hover:border-indigo-300 transition-all"
+            className="w-full flex items-center justify-center gap-1.5 mt-2 py-2 text-xs text-indigo-500 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950 rounded-xl border border-dashed border-indigo-200 dark:border-indigo-800 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all"
           >
             <Plus className="w-3 h-3" />
             Add exercise
           </button>
 
-          <p className="text-[10px] text-gray-400 mt-2 text-center">
+          <p className="text-[10px] text-gray-400 dark:text-gray-500 mt-2 text-center">
             {group.exercises.length} exercise{group.exercises.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -343,7 +407,7 @@ export default function WorkoutGroupCard({ group }: { group: Group }) {
       {showAddModal && (
         <AddExerciseModal
           groupId={group._id}
-          pinnedExercises={pinnedExercises ?? []}
+          existingExerciseIds={existingExerciseIds}
           onClose={() => setShowAddModal(false)}
         />
       )}

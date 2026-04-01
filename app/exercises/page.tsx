@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import { Search, Pin, ChevronDown, ChevronUp } from "lucide-react";
+import { Search, ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ExerciseCard from "@/components/ExerciseCard";
 import PinExerciseModal from "@/components/PinExerciseModal";
@@ -15,11 +15,12 @@ import { EXERCISES, CATEGORIES, Exercise, ExerciseCategory } from "@/lib/exercis
 export default function ExercisesPage() {
   const user = useQuery(api.users.currentUser);
   const pinnedExercises = useQuery(api.pinnedExercises.list);
+  const exerciseWorkoutMap = useQuery(api.workoutGroups.getExerciseWorkoutMap);
 
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<ExerciseCategory | "all">("all");
   const [showAllPills, setShowAllPills] = useState(false);
-  const [pinningExercise, setPinningExercise] = useState<Exercise | null>(null);
+  const [addingWeightExercise, setAddingWeightExercise] = useState<Exercise | null>(null);
   const [statsExercise, setStatsExercise] = useState<Exercise | null>(null);
   const [showProfileModal, setShowProfileModal] = useState(false);
 
@@ -39,6 +40,19 @@ export default function ExercisesPage() {
     return m;
   }, [pinnedExercises]);
 
+  // Map exerciseId -> workout group names
+  const workoutNamesMap = useMemo(() => {
+    const m = new Map<string, string[]>();
+    if (exerciseWorkoutMap) {
+      for (const { exerciseId, groupTitle } of exerciseWorkoutMap) {
+        const existing = m.get(exerciseId) ?? [];
+        existing.push(groupTitle);
+        m.set(exerciseId, existing);
+      }
+    }
+    return m;
+  }, [exerciseWorkoutMap]);
+
   const filtered = useMemo(() => {
     return EXERCISES.filter((ex) => {
       const matchSearch =
@@ -50,11 +64,18 @@ export default function ExercisesPage() {
     });
   }, [search, selectedCategory]);
 
+  // Sort: exercises in a workout come first
+  const sortedFiltered = useMemo(() => {
+    const inWorkout = filtered.filter((ex) => workoutNamesMap.has(ex.id));
+    const notInWorkout = filtered.filter((ex) => !workoutNamesMap.has(ex.id));
+    return [...inWorkout, ...notInWorkout];
+  }, [filtered, workoutNamesMap]);
+
   const needsOnboarding = user !== undefined && user !== null && !user.profile?.onboardingComplete;
 
-  if (user === undefined || pinnedExercises === undefined) {
+  if (user === undefined || pinnedExercises === undefined || exerciseWorkoutMap === undefined) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
         <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
@@ -65,40 +86,30 @@ export default function ExercisesPage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <Navbar user={user} />
 
       {needsOnboarding && (
-        <ProfileModal
-          existing={user?.profile}
-          onClose={() => {}}
-          isOnboarding
-        />
+        <ProfileModal existing={user?.profile} onClose={() => {}} isOnboarding />
       )}
 
       <main className="max-w-7xl mx-auto px-4 py-8 pb-24 sm:pb-8 page-enter">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">Exercise Library</h1>
-          <p className="text-gray-500 text-sm">
-            Browse exercises, pin them to your library with your working weight.
-            {pinnedExercises.length > 0 && (
-              <span className="text-emerald-600 ml-2">
-                <Pin className="inline w-3 h-3 mr-0.5" />
-                {pinnedExercises.length} pinned
-              </span>
-            )}
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">Exercise Library</h1>
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
+            Browse exercises and log your working weight to see your strength percentile.
           </p>
         </div>
 
         {/* Search + filters */}
         <div className="flex flex-col gap-3 mb-6">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500" />
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search exercises or muscle groups..."
-              className="w-full bg-white border border-gray-200 rounded-xl pl-9 pr-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 shadow-sm text-sm"
+              className="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl pl-9 pr-4 py-2.5 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 shadow-sm text-sm"
             />
           </div>
 
@@ -107,7 +118,7 @@ export default function ExercisesPage() {
             <button
               onClick={() => setSelectedCategory("all")}
               className={`flex-shrink-0 px-3 py-2 rounded-xl text-xs font-medium transition-colors ${
-                selectedCategory === "all" ? "bg-gray-900 text-white" : "bg-white border border-gray-200 text-gray-500 hover:bg-gray-50 shadow-sm"
+                selectedCategory === "all" ? "bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900" : "bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 shadow-sm"
               }`}
             >
               All
@@ -117,7 +128,7 @@ export default function ExercisesPage() {
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`flex-shrink-0 px-3 py-2 rounded-xl text-xs font-medium transition-colors ${
-                  selectedCategory === cat.id ? "bg-gray-900 text-white" : "bg-white border border-gray-200 text-gray-500 hover:bg-gray-50 shadow-sm"
+                  selectedCategory === cat.id ? `${cat.color} text-white shadow-sm` : "bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 shadow-sm"
                 }`}
               >
                 {cat.label}
@@ -134,7 +145,7 @@ export default function ExercisesPage() {
                 <button
                   onClick={() => setSelectedCategory("all")}
                   className={`flex-shrink-0 px-3 py-1.5 rounded-xl text-xs font-medium transition-colors ${
-                    selectedCategory === "all" ? "bg-gray-900 text-white" : "bg-white border border-gray-200 text-gray-500"
+                    selectedCategory === "all" ? "bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900" : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
                   }`}
                 >
                   All
@@ -144,21 +155,20 @@ export default function ExercisesPage() {
                     key={cat.id}
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`flex-shrink-0 px-3 py-1.5 rounded-xl text-xs font-medium transition-colors ${
-                      selectedCategory === cat.id ? "bg-gray-900 text-white" : "bg-white border border-gray-200 text-gray-500"
+                      selectedCategory === cat.id ? `${cat.color} text-white` : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
                     }`}
                   >
                     {cat.label}
                   </button>
                 ))}
               </div>
-              {/* Fade overlay when collapsed */}
               {!showAllPills && (
-                <div className="absolute bottom-0 inset-x-0 h-7 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 inset-x-0 h-7 bg-gradient-to-t from-gray-50 dark:from-gray-950 to-transparent pointer-events-none" />
               )}
             </div>
             <button
               onClick={() => setShowAllPills((v) => !v)}
-              className="mt-1.5 flex items-center gap-1 text-xs text-indigo-500 font-medium"
+              className="mt-1.5 flex items-center gap-1 text-xs text-indigo-500 dark:text-indigo-400 font-medium"
             >
               {showAllPills ? (
                 <><ChevronUp className="w-3.5 h-3.5" /> Show less</>
@@ -171,8 +181,8 @@ export default function ExercisesPage() {
 
         {/* No profile warning */}
         {!user?.profile?.weight && (
-          <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-between gap-4">
-            <p className="text-sm text-amber-700">
+          <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded-xl flex items-center justify-between gap-4">
+            <p className="text-sm text-amber-700 dark:text-amber-300">
               Add your height & weight to unlock strength percentile stats for each exercise.
             </p>
             <button
@@ -186,14 +196,14 @@ export default function ExercisesPage() {
 
         {/* Exercise grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {filtered.map((exercise) => (
+          {sortedFiltered.map((exercise) => (
             <ExerciseCard
               key={exercise.id}
               exercise={exercise}
               pinned={pinnedMap.get(exercise.id) ?? null}
               userWeight={user?.profile?.weight ?? undefined}
               userGender={user?.profile?.gender ?? undefined}
-              onPin={(ex) => setPinningExercise(ex)}
+              onAddWeight={(ex) => setAddingWeightExercise(ex)}
               onViewStats={(ex) => {
                 if (user?.profile?.weight && user?.profile?.height) {
                   setStatsExercise(ex);
@@ -201,25 +211,25 @@ export default function ExercisesPage() {
                   setShowProfileModal(true);
                 }
               }}
+              workoutGroupNames={workoutNamesMap.get(exercise.id)}
             />
           ))}
         </div>
 
-        {filtered.length === 0 && (
-          <div className="text-center py-16 text-gray-400">
+        {sortedFiltered.length === 0 && (
+          <div className="text-center py-16 text-gray-400 dark:text-gray-500">
             No exercises found for &ldquo;{search}&rdquo;
           </div>
         )}
       </main>
 
-      {pinningExercise && (
+      {addingWeightExercise && (
         <PinExerciseModal
-          exercise={pinningExercise}
-          existing={pinnedMap.get(pinningExercise.id) ?? null}
-
+          exercise={addingWeightExercise}
+          existing={pinnedMap.get(addingWeightExercise.id) ?? null}
           userWeight={user?.profile?.weight ?? undefined}
           userGender={user?.profile?.gender ?? undefined}
-          onClose={() => setPinningExercise(null)}
+          onClose={() => setAddingWeightExercise(null)}
         />
       )}
 
@@ -236,10 +246,7 @@ export default function ExercisesPage() {
       )}
 
       {showProfileModal && (
-        <ProfileModal
-          existing={user?.profile}
-          onClose={() => setShowProfileModal(false)}
-        />
+        <ProfileModal existing={user?.profile} onClose={() => setShowProfileModal(false)} />
       )}
     </div>
   );

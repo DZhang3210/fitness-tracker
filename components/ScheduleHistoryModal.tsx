@@ -30,7 +30,6 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
   const history = useQuery(api.workoutSessions.getHistory, { days: 28 });
   const workoutGroups = useQuery(api.workoutGroups.list);
 
-  // Build a set of scheduled days from workoutGroups
   const scheduledDays = useMemo(() => {
     const set = new Set<number>();
     for (const g of workoutGroups ?? []) {
@@ -44,21 +43,21 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
       <div className="modal-overlay absolute inset-0 bg-black/50" onClick={onClose} />
-      <div className="modal-panel relative bg-white border border-gray-100 rounded-t-2xl sm:rounded-2xl w-full sm:max-w-md shadow-xl max-h-[85vh] flex flex-col">
+      <div className="modal-panel relative bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-t-2xl sm:rounded-2xl w-full sm:max-w-md shadow-xl max-h-[85vh] flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b border-gray-100 flex items-center justify-between flex-shrink-0">
+        <div className="p-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 bg-indigo-50 rounded-xl">
-              <Calendar className="w-4 h-4 text-indigo-600" />
+            <div className="p-2 bg-indigo-50 dark:bg-indigo-950 rounded-xl">
+              <Calendar className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 text-sm">Workout History</h2>
-              <p className="text-[11px] text-gray-400">Last 28 days</p>
+              <h2 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">Workout History</h2>
+              <p className="text-[11px] text-gray-400 dark:text-gray-500">Last 28 days</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+            className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -85,7 +84,6 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
                   0
                 );
 
-                // Determine day status
                 let status: "done" | "partial" | "skipped" | "rest";
                 if (hasActivity && doneSetsTotal === allSetsTotal && allSetsTotal > 0) {
                   status = "done";
@@ -102,17 +100,16 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
                     key={date}
                     className={`rounded-xl border p-3 ${
                       status === "done"
-                        ? "border-emerald-200 bg-emerald-50/50"
+                        ? "border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/30"
                         : status === "partial"
-                        ? "border-amber-200 bg-amber-50/50"
+                        ? "border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-950/30"
                         : status === "skipped"
-                        ? "border-red-100 bg-red-50/30"
-                        : "border-gray-100 bg-gray-50/50"
+                        ? "border-red-100 dark:border-red-900 bg-red-50/30 dark:bg-red-950/20"
+                        : "border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/30"
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
-                        {/* Status icon */}
                         {status === "done" && (
                           <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                         )}
@@ -120,26 +117,26 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
                           <div className="w-4 h-4 rounded-full border-2 border-amber-400 flex-shrink-0" />
                         )}
                         {status === "skipped" && (
-                          <div className="w-4 h-4 rounded-full border-2 border-red-300 flex-shrink-0" />
+                          <div className="w-4 h-4 rounded-full border-2 border-red-300 dark:border-red-600 flex-shrink-0" />
                         )}
                         {status === "rest" && (
-                          <Moon className="w-4 h-4 text-gray-300 flex-shrink-0" />
+                          <Moon className="w-4 h-4 text-gray-300 dark:text-gray-600 flex-shrink-0" />
                         )}
 
                         <div>
                           <div className="flex items-center gap-1.5">
-                            <span className="text-xs font-semibold text-gray-900">{label}</span>
-                            <span className="text-[10px] text-gray-400">{sub}</span>
+                            <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">{label}</span>
+                            <span className="text-[10px] text-gray-400 dark:text-gray-500">{sub}</span>
                           </div>
                           <p
                             className={`text-[10px] font-medium ${
                               status === "done"
-                                ? "text-emerald-600"
+                                ? "text-emerald-600 dark:text-emerald-400"
                                 : status === "partial"
-                                ? "text-amber-600"
+                                ? "text-amber-600 dark:text-amber-400"
                                 : status === "skipped"
-                                ? "text-red-400"
-                                : "text-gray-400"
+                                ? "text-red-400 dark:text-red-500"
+                                : "text-gray-400 dark:text-gray-500"
                             }`}
                           >
                             {status === "done" && `All done · ${doneSetsTotal} sets`}
@@ -151,14 +148,12 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
                       </div>
 
                       {hasActivity && (
-                        <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
+                        <ChevronRight className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600" />
                       )}
                     </div>
 
-                    {/* Exercise details */}
                     {hasActivity && (
                       <div className="mt-2.5 pl-6 space-y-1.5">
-                        {/* Group by group title */}
                         {Object.entries(
                           sessions.reduce<Record<string, typeof sessions>>((acc, s) => {
                             (acc[s.groupTitle] ??= []).push(s);
@@ -166,7 +161,7 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
                           }, {})
                         ).map(([groupTitle, groupSessions]) => (
                           <div key={groupTitle}>
-                            <p className="text-[9px] font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                            <p className="text-[9px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-1">
                               {groupTitle}
                             </p>
                             {groupSessions.map((s) => {
@@ -177,15 +172,15 @@ export default function ScheduleHistoryModal({ onClose }: Props) {
                               return (
                                 <div
                                   key={s.sessionId}
-                                  className="flex items-center gap-2 bg-white/70 rounded-lg px-2 py-1"
+                                  className="flex items-center gap-2 bg-white/70 dark:bg-gray-800/70 rounded-lg px-2 py-1"
                                 >
-                                  <Dumbbell className="w-2.5 h-2.5 text-gray-300 flex-shrink-0" />
-                                  <span className="text-[10px] text-gray-700 flex-1 truncate">
+                                  <Dumbbell className="w-2.5 h-2.5 text-gray-300 dark:text-gray-600 flex-shrink-0" />
+                                  <span className="text-[10px] text-gray-700 dark:text-gray-300 flex-1 truncate">
                                     {ex.name}
                                   </span>
                                   <span
                                     className={`text-[10px] font-medium flex-shrink-0 ${
-                                      done === total ? "text-emerald-600" : "text-amber-600"
+                                      done === total ? "text-emerald-600 dark:text-emerald-400" : "text-amber-600 dark:text-amber-400"
                                     }`}
                                   >
                                     {done}/{total}

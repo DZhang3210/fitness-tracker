@@ -176,6 +176,86 @@ export const reorderGroupExercises = mutation({
   },
 });
 
+// Get a map of exerciseId -> array of group titles (for exercises in at least one workout)
+export const getExerciseWorkoutMap = query({
+  args: {},
+  handler: async (ctx) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) return [];
+
+    const groups = await ctx.db
+      .query("workoutGroups")
+      .withIndex("by_user", (q) => q.eq("userId", userId))
+      .collect();
+
+    const result: { exerciseId: string; groupTitle: string }[] = [];
+
+    for (const group of groups) {
+      const exercises = await ctx.db
+        .query("workoutGroupExercises")
+        .withIndex("by_group", (q) => q.eq("groupId", group._id))
+        .collect();
+
+      for (const ge of exercises) {
+        const pinned = await ctx.db.get(ge.pinnedExerciseId);
+        if (pinned) {
+          result.push({ exerciseId: pinned.exerciseId, groupTitle: group.title });
+        }
+      }
+    }
+
+    return result;
+  },
+});
+
+// Add an exercise to a workout group by exerciseId, auto-creating the pinnedExercise if needed
+export const addExerciseByExerciseId = mutation({
+  args: {
+    groupId: v.id("workoutGroups"),
+    exerciseId: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) throw new Error("Not authenticated");
+    const group = await ctx.db.get(args.groupId);
+    if (!group || group.userId !== userId) throw new Error("Not found");
+
+    // Find or create pinnedExercise record
+    let pinnedId = (
+      await ctx.db
+        .query("pinnedExercises")
+        .withIndex("by_user_exercise", (q) =>
+          q.eq("userId", userId).eq("exerciseId", args.exerciseId)
+        )
+        .unique()
+    )?._id;
+
+    if (!pinnedId) {
+      pinnedId = await ctx.db.insert("pinnedExercises", {
+        userId,
+        exerciseId: args.exerciseId,
+        createdAt: Date.now(),
+      });
+    }
+
+    const existingInGroup = await ctx.db
+      .query("workoutGroupExercises")
+      .withIndex("by_group", (q) => q.eq("groupId", args.groupId))
+      .collect();
+
+    // Don't duplicate
+    const alreadyIn = existingInGroup.find((e) => e.pinnedExerciseId === pinnedId);
+    if (alreadyIn) return alreadyIn._id;
+
+    return await ctx.db.insert("workoutGroupExercises", {
+      groupId: args.groupId,
+      userId,
+      pinnedExerciseId: pinnedId,
+      order: existingInGroup.length,
+    });
+  },
+});
+
 // Apply a premade routine: pin all exercises (without resistance) and create all groups
 export const applyRoutine = mutation({
   args: {

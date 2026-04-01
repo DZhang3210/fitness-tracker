@@ -104,35 +104,35 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
         className="modal-overlay absolute inset-0 bg-black/50"
         onClick={!isOnboarding ? onClose : undefined}
       />
-      <div className="modal-panel relative bg-white border border-gray-100 rounded-t-2xl sm:rounded-2xl p-5 sm:p-6 w-full sm:max-w-md shadow-xl">
+      <div className="modal-panel relative bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-t-2xl sm:rounded-2xl p-5 sm:p-6 w-full sm:max-w-md shadow-xl">
         {!isOnboarding && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+            className="absolute top-4 right-4 p-1.5 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         )}
 
         <div className="flex items-center gap-3 mb-6">
-          <div className="p-2.5 bg-indigo-50 rounded-xl">
-            <User className="w-5 h-5 text-indigo-600" />
+          <div className="p-2.5 bg-indigo-50 dark:bg-indigo-950 rounded-xl">
+            <User className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
           </div>
           <div>
-            <h2 className="font-semibold text-gray-900">
+            <h2 className="font-semibold text-gray-900 dark:text-gray-100">
               {isOnboarding ? "Quick profile setup" : "Edit Profile"}
             </h2>
-            <p className="text-xs text-gray-500">Used to calculate your strength percentile</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">Used to calculate your strength percentile</p>
           </div>
         </div>
 
         <div className="space-y-5">
           {/* Gender */}
           <div>
-            <label className="block text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">
+            <label className="block text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-2">
               Biological sex
             </label>
-            <div className="flex gap-1 bg-gray-100 p-1 rounded-xl">
+            <div className="flex gap-1 bg-gray-100 dark:bg-gray-800 p-1 rounded-xl">
               {(["male", "female", "other"] as const).map((g) => (
                 <button
                   key={g}
@@ -140,7 +140,7 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
                   className={`flex-1 py-2 rounded-lg text-sm font-medium capitalize transition-all duration-150 ${
                     gender === g
                       ? "bg-indigo-600 text-white shadow-sm"
-                      : "text-gray-500 hover:text-gray-800 hover:bg-white/60"
+                      : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-white/60 dark:hover:bg-gray-700"
                   }`}
                 >
                   {g}
@@ -152,16 +152,16 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
           {/* Height */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-medium text-gray-400 uppercase tracking-wide">Height</label>
-              <div className="flex bg-gray-100 p-0.5 rounded-lg">
+              <label className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide">Height</label>
+              <div className="flex bg-gray-100 dark:bg-gray-800 p-0.5 rounded-lg">
                 {(["cm", "ft"] as const).map((u) => (
                   <button
                     key={u}
                     onClick={() => setHeightUnit(u)}
                     className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${
                       heightUnit === u
-                        ? "bg-white text-gray-900 shadow-sm"
-                        : "text-gray-400 hover:text-gray-600"
+                        ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm"
+                        : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                     }`}
                   >
                     {u}
@@ -176,7 +176,7 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
                 value={heightCmVal}
                 onChange={(e) => setHeightCmVal(e.target.value)}
                 placeholder="e.g. 178"
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 text-sm transition-shadow"
+                className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 text-sm transition-shadow"
               />
             ) : (
               <div className="flex gap-2">
@@ -188,9 +188,9 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
                     placeholder="5"
                     min="3"
                     max="8"
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 pr-10 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 text-sm transition-shadow"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 pr-10 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 text-sm transition-shadow"
                   />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400 pointer-events-none">ft</span>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400 dark:text-gray-500 pointer-events-none">ft</span>
                 </div>
                 <div className="relative flex-1">
                   <input
@@ -200,9 +200,9 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
                     placeholder="11"
                     min="0"
                     max="11"
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 pr-10 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 text-sm transition-shadow"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 pr-10 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 text-sm transition-shadow"
                   />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400 pointer-events-none">in</span>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400 dark:text-gray-500 pointer-events-none">in</span>
                 </div>
               </div>
             )}
@@ -211,16 +211,16 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
           {/* Weight */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-medium text-gray-400 uppercase tracking-wide">Body weight</label>
-              <div className="flex bg-gray-100 p-0.5 rounded-lg">
+              <label className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide">Body weight</label>
+              <div className="flex bg-gray-100 dark:bg-gray-800 p-0.5 rounded-lg">
                 {(["lbs", "kg"] as const).map((u) => (
                   <button
                     key={u}
                     onClick={() => setWeightUnit(u)}
                     className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${
                       weightUnit === u
-                        ? "bg-white text-gray-900 shadow-sm"
-                        : "text-gray-400 hover:text-gray-600"
+                        ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm"
+                        : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                     }`}
                   >
                     {u}
@@ -233,7 +233,7 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
               value={weightVal}
               onChange={(e) => setWeightVal(e.target.value)}
               placeholder={weightUnit === "kg" ? "e.g. 80" : "e.g. 176"}
-              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 text-sm transition-shadow"
+              className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 text-sm transition-shadow"
             />
           </div>
 
@@ -241,7 +241,7 @@ export default function ProfileModal({ existing, onClose, isOnboarding }: Props)
             {!isOnboarding && (
               <button
                 onClick={onClose}
-                className="flex-1 py-2.5 rounded-xl border border-gray-200 text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors text-sm"
+                className="flex-1 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm"
               >
                 Cancel
               </button>

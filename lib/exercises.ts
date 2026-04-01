@@ -53,8 +53,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["Ry8GzVcj8SY", "vcBig73ojpE", "gRVjAtPip0Y"],
     averages: {
-      male: { mean: 135, sd: 45, unit: "lbs" },
-      female: { mean: 65, sd: 22, unit: "lbs" },
+      male: { mean: 163, sd: 50, unit: "lbs" },
+      female: { mean: 83, sd: 28, unit: "lbs" },
     },
     tips: [
       "Arch your back slightly and plant feet firmly",
@@ -85,8 +85,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["ultKZYZCuEA", "bEv6CCg2BC8", "YaXPRqUwItQ"],
     averages: {
-      male: { mean: 185, sd: 60, unit: "lbs" },
-      female: { mean: 105, sd: 38, unit: "lbs" },
+      male: { mean: 215, sd: 65, unit: "lbs" },
+      female: { mean: 121, sd: 42, unit: "lbs" },
     },
     tips: [
       "Keep your chest up and core braced throughout",
@@ -116,8 +116,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["op9kVnSso6Q", "1ZXobu7JvvE", "r4MzxtBKyNE"],
     averages: {
-      male: { mean: 225, sd: 70, unit: "lbs" },
-      female: { mean: 120, sd: 42, unit: "lbs" },
+      male: { mean: 252, sd: 78, unit: "lbs" },
+      female: { mean: 145, sd: 50, unit: "lbs" },
     },
     tips: [
       "Think 'push the floor away' rather than 'pull the bar up'",
@@ -146,8 +146,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["2yjwXTZbrDc", "kPnB4kXGMBU", "_RlRSV0jDnE"],
     averages: {
-      male: { mean: 95, sd: 30, unit: "lbs" },
-      female: { mean: 48, sd: 16, unit: "lbs" },
+      male: { mean: 107, sd: 32, unit: "lbs" },
+      female: { mean: 54, sd: 18, unit: "lbs" },
     },
     tips: [
       "Keep your core and glutes tight throughout",
@@ -176,8 +176,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["kBWAon7ItDw", "G8l_8chR5BE", "vT2GjY_Umpw"],
     averages: {
-      male: { mean: 145, sd: 45, unit: "lbs" },
-      female: { mean: 72, sd: 24, unit: "lbs" },
+      male: { mean: 141, sd: 44, unit: "lbs" },
+      female: { mean: 75, sd: 25, unit: "lbs" },
     },
     tips: [
       "Think about pulling your elbows to the ceiling",
@@ -206,8 +206,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["eGo4IYlbE5g", "UvSNy4uw-CA", "poFRHGOMxOk"],
     averages: {
-      male: { mean: 8, sd: 5, unit: "reps" },
-      female: { mean: 2, sd: 2, unit: "reps" },
+      male: { mean: 12, sd: 5, unit: "reps" },
+      female: { mean: 5, sd: 3, unit: "reps" },
     },
     tips: [
       "Full range of motion — dead hang to chin over bar",
@@ -236,8 +236,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["CAwf7n6Luuc", "lueScQ8bksc", "SAioDgqId2Q"],
     averages: {
-      male: { mean: 120, sd: 38, unit: "lbs" },
-      female: { mean: 62, sd: 20, unit: "lbs" },
+      male: { mean: 135, sd: 42, unit: "lbs" },
+      female: { mean: 76, sd: 25, unit: "lbs" },
     },
     tips: [
       "Think about pulling your elbows to your back pockets",
@@ -266,8 +266,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["ykJmrZ5v0Oo", "av7-8igSXTs", "in1PZGHBdYA"],
     averages: {
-      male: { mean: 30, sd: 10, unit: "lbs" },
-      female: { mean: 14, sd: 5, unit: "lbs" },
+      male: { mean: 35, sd: 11, unit: "lbs" },
+      female: { mean: 16, sd: 6, unit: "lbs" },
     },
     tips: [
       "Keep upper arms stationary — don't swing",
@@ -296,8 +296,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["2-LAMcpzODU", "kiuVA0gs3EI", "vB5OHsJ3EME"],
     averages: {
-      male: { mean: 55, sd: 18, unit: "lbs" },
-      female: { mean: 28, sd: 10, unit: "lbs" },
+      male: { mean: 80, sd: 25, unit: "lbs" },
+      female: { mean: 44, sd: 15, unit: "lbs" },
     },
     tips: [
       "Keep your upper arms glued to your sides",
@@ -326,8 +326,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["IZxyjW7MPJQ", "sEM_zo9bPXk", "yZmx_Ac3880"],
     averages: {
-      male: { mean: 275, sd: 90, unit: "lbs" },
-      female: { mean: 155, sd: 55, unit: "lbs" },
+      male: { mean: 374, sd: 112, unit: "lbs" },
+      female: { mean: 233, sd: 72, unit: "lbs" },
     },
     tips: [
       "Don't lock your knees out at the top",
@@ -356,8 +356,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["JCXUYuzwNrM", "7rl7IQOQ8oM", "EBwukh3GnJA"],
     averages: {
-      male: { mean: 175, sd: 55, unit: "lbs" },
-      female: { mean: 95, sd: 32, unit: "lbs" },
+      male: { mean: 200, sd: 62, unit: "lbs" },
+      female: { mean: 110, sd: 36, unit: "lbs" },
     },
     tips: [
       "Keep the bar as close to your body as possible",
@@ -386,8 +386,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["SEdqd9cFOcY", "Zp26q4BY5HE", "PH2FGjKFd7o"],
     averages: {
-      male: { mean: 185, sd: 65, unit: "lbs" },
-      female: { mean: 115, sd: 45, unit: "lbs" },
+      male: { mean: 213, sd: 66, unit: "lbs" },
+      female: { mean: 154, sd: 50, unit: "lbs" },
     },
     tips: [
       "Use a pad or towel to protect your hip bones",
@@ -416,8 +416,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["qEwKCR5JCog", "HzIiNhHhhtA", "P3MtF5uqBgA"],
     averages: {
-      male: { mean: 50, sd: 16, unit: "lbs" },
-      female: { mean: 22, sd: 8, unit: "lbs" },
+      male: { mean: 52, sd: 16, unit: "lbs" },
+      female: { mean: 25, sd: 9, unit: "lbs" },
     },
     tips: [
       "Use a slight neutral grip (palms facing inward) to reduce shoulder strain",
@@ -446,8 +446,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["taI4XduLpTk", "Is32LDWB2Hs", "WEM7CuFDesw"],
     averages: {
-      male: { mean: 40, sd: 14, unit: "lbs" },
-      female: { mean: 18, sd: 7, unit: "lbs" },
+      male: { mean: 43, sd: 14, unit: "lbs" },
+      female: { mean: 21, sd: 7, unit: "lbs" },
     },
     tips: [
       "Maintain the same elbow angle throughout — this isn't a press",
@@ -476,8 +476,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["HSoHeSjvIdQ", "V3NTQoJTNoI", "rep-qVOkqgk"],
     averages: {
-      male: { mean: 40, sd: 14, unit: "lbs" },
-      female: { mean: 22, sd: 8, unit: "lbs" },
+      male: { mean: 56, sd: 18, unit: "lbs" },
+      female: { mean: 29, sd: 10, unit: "lbs" },
     },
     tips: [
       "Never skip face pulls — they are crucial for shoulder joint health",
@@ -506,8 +506,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["D7KaRcUTQeE", "QOVaHwm-Q6U", "eFWCn5iEbTU"],
     averages: {
-      male: { mean: 40, sd: 14, unit: "lbs" },
-      female: { mean: 20, sd: 8, unit: "lbs" },
+      male: { mean: 53, sd: 17, unit: "lbs" },
+      female: { mean: 29, sd: 10, unit: "lbs" },
     },
     tips: [
       "Keep your torso upright — don't lean forward",
@@ -565,8 +565,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["UCXxvVItLoM", "GZbfZ033f74", "pYcpY20QaE8"],
     averages: {
-      male: { mean: 130, sd: 42, unit: "lbs" },
-      female: { mean: 65, sd: 22, unit: "lbs" },
+      male: { mean: 135, sd: 42, unit: "lbs" },
+      female: { mean: 72, sd: 24, unit: "lbs" },
     },
     tips: [
       "Drive elbows back — not just hands back",
@@ -595,8 +595,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["8iPEnn-ltC8", "DbFgADa2PL8", "IP4oeKh3BI0"],
     averages: {
-      male: { mean: 60, sd: 20, unit: "lbs" },
-      female: { mean: 28, sd: 10, unit: "lbs" },
+      male: { mean: 65, sd: 20, unit: "lbs" },
+      female: { mean: 33, sd: 11, unit: "lbs" },
     },
     tips: [
       "Keep elbows at 45–60° from your torso, not flared wide",
@@ -628,7 +628,7 @@ export const EXERCISES: Exercise[] = [
     youtubeIds: ["IODxDxX7oi4", "BkROOThGHRo", "mm6_WcoCVTA"],
     averages: {
       male: { mean: 28, sd: 12, unit: "reps" },
-      female: { mean: 14, sd: 8, unit: "reps" },
+      female: { mean: 13, sd: 6, unit: "reps" },
     },
     tips: [
       "Keep your core and glutes tight — no sagging hips",
@@ -658,8 +658,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["VmB1G1K7v94", "QsYre__-aro", "StPRMQGDsk8"],
     averages: {
-      male: { mean: 55, sd: 18, unit: "lbs" },
-      female: { mean: 26, sd: 9, unit: "lbs" },
+      male: { mean: 68, sd: 21, unit: "lbs" },
+      female: { mean: 35, sd: 12, unit: "lbs" },
     },
     tips: [
       "The extra ROM at the bottom stretches the chest more than a barbell",
@@ -688,8 +688,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["2z8JmcrW-As", "yN6Q1UI_xkE", "dX_nSOOJIsE"],
     averages: {
-      male: { mean: 12, sd: 6, unit: "reps" },
-      female: { mean: 4, sd: 3, unit: "reps" },
+      male: { mean: 16, sd: 6, unit: "reps" },
+      female: { mean: 5, sd: 3, unit: "reps" },
     },
     tips: [
       "Lean forward — upright dips target triceps; forward lean targets chest",
@@ -718,8 +718,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["Z57CtFmRMxA", "p3zSBVOHrFg", "ea_WBEA8XO4"],
     averages: {
-      male: { mean: 115, sd: 38, unit: "lbs" },
-      female: { mean: 55, sd: 20, unit: "lbs" },
+      male: { mean: 122, sd: 38, unit: "lbs" },
+      female: { mean: 60, sd: 20, unit: "lbs" },
     },
     tips: [
       "Focus on squeezing from the chest, not just moving your arms",
@@ -748,8 +748,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["j3Igk5nyZE4", "KDEl3AmZbVE", "GIPSG6-tTKo"],
     averages: {
-      male: { mean: 155, sd: 50, unit: "lbs" },
-      female: { mean: 75, sd: 26, unit: "lbs" },
+      male: { mean: 131, sd: 40, unit: "lbs" },
+      female: { mean: 68, sd: 22, unit: "lbs" },
     },
     tips: [
       "Keep a neutral spine — no rounding",
@@ -778,8 +778,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["pYcpY20QaE8", "roCP0hFQzHI", "xl_jhfE4GCA"],
     averages: {
-      male: { mean: 80, sd: 26, unit: "lbs" },
-      female: { mean: 38, sd: 13, unit: "lbs" },
+      male: { mean: 71, sd: 22, unit: "lbs" },
+      female: { mean: 35, sd: 12, unit: "lbs" },
     },
     tips: [
       "Allow the shoulder blade to move fully — don't keep it pinned",
@@ -808,8 +808,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["YA-h3n9L4YU", "_oGlEKBH4Xo", "OB0oB8oO6MQ"],
     averages: {
-      male: { mean: 95, sd: 35, unit: "lbs" },
-      female: { mean: 45, sd: 18, unit: "lbs" },
+      male: { mean: 119, sd: 37, unit: "lbs" },
+      female: { mean: 62, sd: 20, unit: "lbs" },
     },
     tips: [
       "Start very light — this movement is technical and stressful on the lower back",
@@ -838,8 +838,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["fEhDvRGNYFk", "yRjBhPNmGqA", "b8U6FIQfMvw"],
     averages: {
-      male: { mean: 55, sd: 18, unit: "lbs" },
-      female: { mean: 25, sd: 9, unit: "lbs" },
+      male: { mean: 65, sd: 20, unit: "lbs" },
+      female: { mean: 28, sd: 10, unit: "lbs" },
     },
     tips: [
       "Perfect for people with lower back issues who still want to row",
@@ -868,8 +868,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["3VcKaXpzqRo", "geenhiHju-o", "FeRnLVPqPYM"],
     averages: {
-      male: { mean: 20, sd: 7, unit: "lbs" },
-      female: { mean: 10, sd: 4, unit: "lbs" },
+      male: { mean: 26, sd: 8, unit: "lbs" },
+      female: { mean: 15, sd: 5, unit: "lbs" },
     },
     tips: [
       "Use lighter weight than you think — form breaks quickly as weight increases",
@@ -898,8 +898,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["ttvfGg9d76c", "EA7u4Q_8HQ0", "6ZB_xtMubCY"],
     averages: {
-      male: { mean: 22, sd: 8, unit: "lbs" },
-      female: { mean: 10, sd: 4, unit: "lbs" },
+      male: { mean: 29, sd: 9, unit: "lbs" },
+      female: { mean: 17, sd: 6, unit: "lbs" },
     },
     tips: [
       "Keep a slight bend in your elbows throughout — this is not a straight-arm raise",
@@ -929,8 +929,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["vj2w851ZHRM", "3ml9BjD3F4o", "3MHlKKgwrDQ"],
     averages: {
-      male: { mean: 40, sd: 14, unit: "lbs" },
-      female: { mean: 18, sd: 7, unit: "lbs" },
+      male: { mean: 45, sd: 14, unit: "lbs" },
+      female: { mean: 21, sd: 7, unit: "lbs" },
     },
     tips: [
       "Move through the rotation smoothly — don't rush it",
@@ -959,8 +959,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["amCSS_1_wqk", "VG5CWjf6TXQ", "UxEzCuuFx8Q"],
     averages: {
-      male: { mean: 75, sd: 25, unit: "lbs" },
-      female: { mean: 35, sd: 12, unit: "lbs" },
+      male: { mean: 81, sd: 25, unit: "lbs" },
+      female: { mean: 41, sd: 14, unit: "lbs" },
     },
     tips: [
       "Use a shoulder-width or wider grip to reduce shoulder impingement risk",
@@ -989,8 +989,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["zC3nLlEvin4", "TwD-YGVP4Bk", "ykJmrZ5v0Oo"],
     averages: {
-      male: { mean: 32, sd: 10, unit: "lbs" },
-      female: { mean: 15, sd: 5, unit: "lbs" },
+      male: { mean: 39, sd: 12, unit: "lbs" },
+      female: { mean: 19, sd: 7, unit: "lbs" },
     },
     tips: [
       "Neutral grip puts less stress on the wrist and elbow than supinated curls",
@@ -1019,8 +1019,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["d_KZxkY_0cM", "NIBDFJgPCQU", "ir5PsbniVSc"],
     averages: {
-      male: { mean: 65, sd: 22, unit: "lbs" },
-      female: { mean: 30, sd: 11, unit: "lbs" },
+      male: { mean: 71, sd: 22, unit: "lbs" },
+      female: { mean: 34, sd: 11, unit: "lbs" },
     },
     tips: [
       "Use an EZ-bar to reduce wrist strain vs. straight bar",
@@ -1049,8 +1049,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["fIWP-FRFNU0", "Ux6KCPFDHqQ", "P_V4VTiGRwE"],
     averages: {
-      male: { mean: 55, sd: 18, unit: "lbs" },
-      female: { mean: 25, sd: 9, unit: "lbs" },
+      male: { mean: 68, sd: 21, unit: "lbs" },
+      female: { mean: 32, sd: 11, unit: "lbs" },
     },
     tips: [
       "Don't let the bar drop too fast at the bottom — the stretch is productive, not a bounce",
@@ -1079,8 +1079,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["YbX7Wd8jQ-Q", "_gsUck-7M74", "6SS6K3lAwZ8"],
     averages: {
-      male: { mean: 55, sd: 18, unit: "lbs" },
-      female: { mean: 26, sd: 9, unit: "lbs" },
+      male: { mean: 36, sd: 11, unit: "lbs" },
+      female: { mean: 17, sd: 6, unit: "lbs" },
     },
     tips: [
       "Keep elbows close to your head — don't let them flare wide",
@@ -1109,8 +1109,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["nEF0bv2FW94", "cXbSJHtjrQA", "wxS9OD7Q0-w"],
     averages: {
-      male: { mean: 115, sd: 38, unit: "lbs" },
-      female: { mean: 55, sd: 18, unit: "lbs" },
+      male: { mean: 147, sd: 46, unit: "lbs" },
+      female: { mean: 76, sd: 25, unit: "lbs" },
     },
     tips: [
       "Don't go too narrow — hands touching causes wrist pain and reduces stability",
@@ -1139,8 +1139,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["2C-uNgKwPLE", "vUNhCBYDDMw", "HMg5UBKkR7I"],
     averages: {
-      male: { mean: 45, sd: 16, unit: "lbs" },
-      female: { mean: 22, sd: 8, unit: "lbs" },
+      male: { mean: 49, sd: 15, unit: "lbs" },
+      female: { mean: 27, sd: 9, unit: "lbs" },
     },
     tips: [
       "Front foot position matters — too close cramps the knee, too far strains the hip",
@@ -1169,8 +1169,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["EdtbbskHUE4", "sB-e4LHGSP0", "4V_9JlJAaFc"],
     averages: {
-      male: { mean: 245, sd: 80, unit: "lbs" },
-      female: { mean: 130, sd: 45, unit: "lbs" },
+      male: { mean: 248, sd: 76, unit: "lbs" },
+      female: { mean: 143, sd: 46, unit: "lbs" },
     },
     tips: [
       "Feet higher on the platform = more glutes/hamstrings; lower = more quads",
@@ -1199,8 +1199,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["Orxowest56U", "1Tq3QdYUuHs", "ELOCsoDSmrg"],
     averages: {
-      male: { mean: 110, sd: 35, unit: "lbs" },
-      female: { mean: 60, sd: 22, unit: "lbs" },
+      male: { mean: 106, sd: 33, unit: "lbs" },
+      female: { mean: 62, sd: 20, unit: "lbs" },
     },
     tips: [
       "Point toes slightly to emphasize the outer hamstring",
@@ -1229,8 +1229,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["YyvSfVjQeL0", "m0FOpMEgero", "y4CJ9MTQSYY"],
     averages: {
-      male: { mean: 130, sd: 42, unit: "lbs" },
-      female: { mean: 72, sd: 25, unit: "lbs" },
+      male: { mean: 159, sd: 49, unit: "lbs" },
+      female: { mean: 96, sd: 31, unit: "lbs" },
     },
     tips: [
       "Point toes slightly upward at the top for a stronger quad contraction",
@@ -1259,8 +1259,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["gwLzBJYoWlI", "YMmgqO8-Gts", "c5kKlGXvkYI"],
     averages: {
-      male: { mean: 185, sd: 65, unit: "lbs" },
-      female: { mean: 100, sd: 38, unit: "lbs" },
+      male: { mean: 184, sd: 57, unit: "lbs" },
+      female: { mean: 101, sd: 33, unit: "lbs" },
     },
     tips: [
       "Full range of motion is everything — partial reps barely work the calf",
@@ -1289,8 +1289,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["MxsFDhcyFyE", "CkFzYHOQm4E", "g4OPcbmOc6Y"],
     averages: {
-      male: { mean: 60, sd: 20, unit: "lbs" },
-      female: { mean: 28, sd: 10, unit: "lbs" },
+      male: { mean: 60, sd: 18, unit: "lbs" },
+      female: { mean: 35, sd: 12, unit: "lbs" },
     },
     tips: [
       "The weight in front helps you sit back and keep your chest tall simultaneously",
@@ -1320,8 +1320,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["dQqApCGd5Ss", "hbMCSCNpHcg", "jlBBNqsxMXU"],
     averages: {
-      male: { mean: 35, sd: 12, unit: "lbs" },
-      female: { mean: 16, sd: 6, unit: "lbs" },
+      male: { mean: 41, sd: 13, unit: "lbs" },
+      female: { mean: 23, sd: 8, unit: "lbs" },
     },
     tips: [
       "Push through the heel of the elevated foot — don't push off the floor foot",
@@ -1350,8 +1350,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["0AFgCNEsSpI", "NtbbImFPqKE", "b9EBsIBsAsA"],
     averages: {
-      male: { mean: 8, sd: 4, unit: "reps" },
-      female: { mean: 4, sd: 2, unit: "reps" },
+      male: { mean: 10, sd: 4, unit: "reps" },
+      female: { mean: 5, sd: 2, unit: "reps" },
     },
     tips: [
       "Start from a kneeling position — standing rollouts are extremely advanced",
@@ -1380,8 +1380,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["Pr1ieGZ5atk", "JcpSb7QLZPM", "s_7vhLpLqBc"],
     averages: {
-      male: { mean: 12, sd: 5, unit: "reps" },
-      female: { mean: 6, sd: 3, unit: "reps" },
+      male: { mean: 10, sd: 4, unit: "reps" },
+      female: { mean: 5, sd: 2, unit: "reps" },
     },
     tips: [
       "Bend your knees to reduce difficulty; straight legs are the advanced version",
@@ -1410,8 +1410,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["wkD8rjkodUI", "JyUqwkVpsi8", "oMv1wUPCFug"],
     averages: {
-      male: { mean: 25, sd: 10, unit: "lbs" },
-      female: { mean: 10, sd: 4, unit: "lbs" },
+      male: { mean: 19, sd: 7, unit: "lbs" },
+      female: { mean: 11, sd: 4, unit: "lbs" },
     },
     tips: [
       "Rotate from the torso, not just the arms",
@@ -1440,8 +1440,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["2fbujeH3F0E", "_T_DLDOTHuM", "wBKllMWGieI"],
     averages: {
-      male: { mean: 70, sd: 24, unit: "lbs" },
-      female: { mean: 35, sd: 13, unit: "lbs" },
+      male: { mean: 90, sd: 28, unit: "lbs" },
+      female: { mean: 47, sd: 16, unit: "lbs" },
     },
     tips: [
       "Think about bringing your sternum toward your pelvis — spinal flexion, not hip flexion",
@@ -1469,8 +1469,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["K2MnUH7PaUk", "IWAlrRfD1lI", "j8tSBMZ8_PU"],
     averages: {
-      male: { mean: 55, sd: 25, unit: "reps" },
-      female: { mean: 40, sd: 18, unit: "reps" },
+      male: { mean: 35, sd: 12, unit: "reps" },
+      female: { mean: 25, sd: 8, unit: "reps" },
     },
     tips: [
       "Don't let your hips sag or pike — stay in a rigid straight line",
@@ -1500,8 +1500,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["mKDIuUbH94k", "sSESeQAir2M", "Bwt0cE1Vej4"],
     averages: {
-      male: { mean: 50, sd: 16, unit: "lbs" },
-      female: { mean: 26, sd: 9, unit: "lbs" },
+      male: { mean: 53, sd: 16, unit: "lbs" },
+      female: { mean: 35, sd: 11, unit: "lbs" },
     },
     tips: [
       "This is a hip hinge, not a squat — your hips go back, not down",
@@ -1530,8 +1530,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["Fkzk2Hf9Wr0", "rt1SVSP8GHY", "4oeQl3-9uO0"],
     averages: {
-      male: { mean: 80, sd: 28, unit: "lbs" },
-      female: { mean: 38, sd: 14, unit: "lbs" },
+      male: { mean: 90, sd: 28, unit: "lbs" },
+      female: { mean: 50, sd: 16, unit: "lbs" },
     },
     tips: [
       "Walk with short, quick steps — don't lunge",
@@ -1560,8 +1560,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["PPRMoFTB_1E", "QLQMnxJR8E0", "HVDoTqCqS3c"],
     averages: {
-      male: { mean: 18, sd: 6, unit: "lbs" },
-      female: { mean: 8, sd: 3, unit: "lbs" },
+      male: { mean: 19, sd: 6, unit: "lbs" },
+      female: { mean: 10, sd: 4, unit: "lbs" },
     },
     tips: [
       "Cable provides more tension at the bottom than dumbbells — more effective per rep",
@@ -1590,8 +1590,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["r27J9X3KBAQ", "nFgvKTeXgFk", "A7-TefGHMY4"],
     averages: {
-      male: { mean: 55, sd: 18, unit: "lbs" },
-      female: { mean: 25, sd: 9, unit: "lbs" },
+      male: { mean: 54, sd: 17, unit: "lbs" },
+      female: { mean: 26, sd: 9, unit: "lbs" },
     },
     tips: [
       "You will use significantly less weight than a regular curl — that's normal",
@@ -1842,8 +1842,8 @@ export const EXERCISES: Exercise[] = [
     ],
     youtubeIds: ["LfyQBUKR8SE", "OR5rCFXJkBM", "0nALkBERMz4"],
     averages: {
-      male: { mean: 145, sd: 48, unit: "lbs" },
-      female: { mean: 70, sd: 25, unit: "lbs" },
+      male: { mean: 169, sd: 52, unit: "lbs" },
+      female: { mean: 83, sd: 27, unit: "lbs" },
     },
     tips: [
       "The decline angle reduces shoulder stress for many people",
@@ -1851,6 +1851,941 @@ export const EXERCISES: Exercise[] = [
       "Smith machine is a common alternative for solo lifters",
     ],
     equipment: ["Barbell", "Decline Bench", "Rack"],
+  },
+
+  // ── New exercises ─────────────────────────────────────────────────────────────
+
+  {
+    id: "front-squat",
+    name: "Front Squat",
+    category: "legs",
+    muscleGroups: ["Quadriceps", "Core", "Upper Back", "Glutes"],
+    description:
+      "A barbell squat variation with the bar resting on the front deltoids and clavicle. The upright torso required shifts the emphasis heavily onto the quads and demands significant core and upper back strength.",
+    instructions: [
+      "Place barbell in the front rack position across front deltoids, elbows high",
+      "Feet shoulder-width, toes slightly flared out",
+      "Brace core and descend by pushing knees out over toes",
+      "Keep elbows up throughout to prevent the bar from rolling forward",
+      "Drive up through heels to standing, maintaining upright torso",
+    ],
+    frames: [
+      { label: "Rack", description: "Bar on front deltoids, elbows high and forward" },
+      { label: "Descent", description: "Hips dropping, knees tracking out, torso upright" },
+      { label: "Bottom", description: "Hip crease below knees, elbows still high" },
+      { label: "Drive", description: "Pressing up through heels, torso stays vertical" },
+    ],
+    youtubeIds: ["m4ytaCJZpl0", "v-mQm_droHg", "uYumuL_G_V0"],
+    averages: {
+      male: { mean: 171, sd: 52, unit: "lbs" },
+      female: { mean: 96, sd: 31, unit: "lbs" },
+    },
+    tips: [
+      "High elbows are non-negotiable — dropping them causes bar to roll forward",
+      "Wrist flexibility is a common limiter; use a cross-arm grip as an alternative",
+      "Front squats self-correct poor form since bad technique dumps the bar immediately",
+    ],
+    equipment: ["Barbell", "Squat Rack"],
+  },
+
+  {
+    id: "sumo-deadlift",
+    name: "Sumo Deadlift",
+    category: "legs",
+    muscleGroups: ["Glutes", "Adductors", "Hamstrings", "Lower Back"],
+    description:
+      "A deadlift variation with a wide stance and toes pointed out. The bar is gripped inside the legs, reducing the range of motion and shifting emphasis to the glutes and inner thighs compared to a conventional pull.",
+    instructions: [
+      "Take a wide stance with toes pointing out 45°, bar over mid-foot",
+      "Grip bar inside legs, about shoulder-width",
+      "Drop hips, chest tall, knees pushed out over toes",
+      "Drive the floor away and push hips through as bar passes the knees",
+      "Lock out hips and knees simultaneously at the top",
+    ],
+    frames: [
+      { label: "Set", description: "Wide stance, hips low, chest up, bar over mid-foot" },
+      { label: "Off Floor", description: "Knees push out, back angle maintained" },
+      { label: "Lockout", description: "Hips extended, standing tall with bar at hip" },
+    ],
+    youtubeIds: ["Zw4k-2Y6TKs", "1tZMBCaFnkc", "jkHKEPknMO8"],
+    averages: {
+      male: { mean: 239, sd: 74, unit: "lbs" },
+      female: { mean: 152, sd: 49, unit: "lbs" },
+    },
+    tips: [
+      "Push your knees hard out over your toes — this is the key technique cue",
+      "The sumo stance is legal in powerlifting and suits those with longer torsos or wide hips",
+      "Bar stays close to the body; think 'drag the bar up your shins'",
+    ],
+    equipment: ["Barbell"],
+  },
+
+  {
+    id: "incline-bench-press",
+    name: "Incline Barbell Bench Press",
+    category: "chest",
+    muscleGroups: ["Upper Pectorals", "Anterior Deltoids", "Triceps"],
+    description:
+      "A barbell bench press performed on a bench set to 30–45°. The incline angle targets the clavicular (upper) head of the pectoralis major more than flat pressing.",
+    instructions: [
+      "Set bench to 30–45°, lie back and grip bar just outside shoulder width",
+      "Unrack bar and lower it to your upper chest near the clavicle",
+      "Elbows at roughly 60° from the torso, not fully flared",
+      "Press explosively back to full arm extension",
+    ],
+    frames: [
+      { label: "Unrack", description: "Bar over upper chest, incline position" },
+      { label: "Lower", description: "Bar descending to upper chest, elbows at 60°" },
+      { label: "Press", description: "Drive bar up and slightly back to lockout" },
+    ],
+    youtubeIds: ["jPLdzuHckI8", "IP4oeKh3BI0", "DbFgADa2PL8"],
+    averages: {
+      male: { mean: 147, sd: 46, unit: "lbs" },
+      female: { mean: 71, sd: 23, unit: "lbs" },
+    },
+    tips: [
+      "Don't set the incline too steep — above 45° recruits mostly shoulders, not upper chest",
+      "Retract and depress your shoulder blades before every set",
+      "The bar should travel in a slight arc, not perfectly vertical",
+    ],
+    equipment: ["Barbell", "Incline Bench", "Rack"],
+  },
+
+  {
+    id: "push-press",
+    name: "Push Press",
+    category: "shoulders",
+    muscleGroups: ["Shoulders", "Triceps", "Quads", "Core"],
+    description:
+      "An overhead pressing movement that uses a leg drive dip-and-drive to initiate momentum, allowing heavier loads than a strict press. Trains explosive power and shoulder strength simultaneously.",
+    instructions: [
+      "Bar rests on front deltoids, feet shoulder-width",
+      "Dip knees slightly to about 10–15° of flexion",
+      "Explode upward with legs, transferring power to the bar",
+      "Press bar overhead to full lockout as legs straighten",
+      "Receive the bar under control and reset for the next rep",
+    ],
+    frames: [
+      { label: "Rack", description: "Bar at shoulders, knees slightly bent for dip" },
+      { label: "Drive", description: "Legs extend explosively, bar accelerates upward" },
+      { label: "Lockout", description: "Arms fully extended overhead" },
+    ],
+    youtubeIds: ["iaBVSJm78ko", "F3RM7Bj9SE0", "TiHzDYmBBT0"],
+    averages: {
+      male: { mean: 131, sd: 40, unit: "lbs" },
+      female: { mean: 68, sd: 22, unit: "lbs" },
+    },
+    tips: [
+      "The dip should be fast and shallow — not a squat, just a quick knee bend",
+      "Core must be braced before the dip begins",
+      "Great for building overhead pressing volume with heavier loads than strict press",
+    ],
+    equipment: ["Barbell", "Rack"],
+  },
+
+  {
+    id: "chin-up",
+    name: "Chin-Up",
+    category: "back",
+    muscleGroups: ["Biceps", "Latissimus Dorsi", "Rear Deltoids"],
+    description:
+      "A vertical pulling bodyweight exercise performed with an underhand (supinated) grip. The palms-facing-you grip places the biceps in a stronger position, making chin-ups slightly easier than pull-ups and adding more direct bicep work.",
+    instructions: [
+      "Hang from bar with underhand grip, hands shoulder-width apart",
+      "Depress and retract shoulder blades to initiate",
+      "Pull elbows toward hips until chin clears the bar",
+      "Lower slowly to a full dead hang",
+    ],
+    frames: [
+      { label: "Dead Hang", description: "Underhand grip, arms fully extended" },
+      { label: "Halfway", description: "Elbows bending, biceps engaging" },
+      { label: "Top", description: "Chin over bar, chest near bar" },
+    ],
+    youtubeIds: ["brhRXlOhsAM", "qB9RQXhHbwM", "UvSNy4uw-CA"],
+    averages: {
+      male: { mean: 13, sd: 5, unit: "reps" },
+      female: { mean: 5, sd: 3, unit: "reps" },
+    },
+    tips: [
+      "Underhand grip gives more bicep recruitment than a pronated pull-up",
+      "Full range of motion is key — dead hang at the bottom, chin over bar at top",
+      "Add weight via belt or weighted vest once you can do 12+ strict reps",
+    ],
+    equipment: ["Pull-Up Bar"],
+  },
+
+  {
+    id: "ez-bar-curl",
+    name: "EZ Bar Curl",
+    category: "arms",
+    muscleGroups: ["Biceps", "Brachialis", "Brachioradialis"],
+    description:
+      "A barbell curl using an EZ-bar, which has angled grip sections that reduce wrist and elbow strain compared to a straight bar. Allows heavier loading than dumbbell curls while hitting both heads of the bicep.",
+    instructions: [
+      "Grip EZ-bar on the angled inner grip, palms facing up at about 45°",
+      "Stand upright, bar hanging at arm's length",
+      "Curl bar toward chin, keeping upper arms stationary",
+      "Squeeze at the top, then lower slowly to full extension",
+    ],
+    frames: [
+      { label: "Down", description: "Arms extended, bar at hips" },
+      { label: "Curl", description: "Bar rising, elbows remain at sides" },
+      { label: "Top", description: "Bar at chin, biceps fully contracted" },
+    ],
+    youtubeIds: ["zG2i9wHfPTE", "hLGNnbDJe4A", "av7-8igSXTs"],
+    averages: {
+      male: { mean: 74, sd: 23, unit: "lbs" },
+      female: { mean: 37, sd: 12, unit: "lbs" },
+    },
+    tips: [
+      "The angled grip reduces wrist supination stress — great for those with wrist issues",
+      "Keep upper arms vertical and still throughout the curl",
+      "Slow the eccentric (lowering) to 2–3 seconds for maximum bicep tension",
+    ],
+    equipment: ["EZ Bar"],
+  },
+
+  {
+    id: "barbell-shrug",
+    name: "Barbell Shrug",
+    category: "back",
+    muscleGroups: ["Trapezius", "Levator Scapulae"],
+    description:
+      "The primary isolation exercise for the upper trapezius. Holding a barbell at hip height, you shrug your shoulders straight up toward your ears, developing the trap muscles that create the neck-to-shoulder slope.",
+    instructions: [
+      "Hold barbell at hip height with an overhand grip, shoulder-width",
+      "Stand tall, arms straight, core braced",
+      "Shrug shoulders straight up toward ears as high as possible",
+      "Hold briefly at the top, then lower slowly",
+    ],
+    frames: [
+      { label: "Down", description: "Shoulders depressed, bar at hips" },
+      { label: "Shrug", description: "Shoulders raised as high as possible" },
+    ],
+    youtubeIds: ["NAqCVe2mwzM", "cJReTJMiiFk", "aMjuXNOgBVQ"],
+    averages: {
+      male: { mean: 173, sd: 54, unit: "lbs" },
+      female: { mean: 90, sd: 29, unit: "lbs" },
+    },
+    tips: [
+      "Shrug straight up — avoid rolling the shoulders forward or backward",
+      "Use straps to prevent grip being the limiting factor",
+      "Pause at the top and lower slowly for more time under tension",
+    ],
+    equipment: ["Barbell"],
+  },
+
+  {
+    id: "concentration-curl",
+    name: "Concentration Curl",
+    category: "arms",
+    muscleGroups: ["Biceps (short head)"],
+    description:
+      "A seated isolation curl where the upper arm braces against the inner thigh, fully eliminating any cheat or momentum. This strict position creates intense peak contraction in the short head of the bicep.",
+    instructions: [
+      "Sit on a bench, feet wide, lean forward",
+      "Rest back of upper arm against inner thigh, dumbbell hanging",
+      "Curl the dumbbell slowly toward your shoulder",
+      "Squeeze hard at the top, then lower fully under control",
+    ],
+    frames: [
+      { label: "Down", description: "Arm extended, braced against thigh" },
+      { label: "Curl", description: "Dumbbell rising, upper arm stationary" },
+      { label: "Top", description: "Full contraction, bicep peak visible" },
+    ],
+    youtubeIds: ["0AUGkch3tzc", "Jvj2wf9Lv9A", "1aHqRSCAwSo"],
+    averages: {
+      male: { mean: 32, sd: 10, unit: "lbs" },
+      female: { mean: 15, sd: 5, unit: "lbs" },
+    },
+    tips: [
+      "The braced arm means zero cheating — use lighter weight than standing curls",
+      "Supinate the wrist at the top to fully recruit the bicep",
+      "Great for improving the mind-muscle connection to the bicep",
+    ],
+    equipment: ["Dumbbell", "Bench"],
+  },
+
+  {
+    id: "dumbbell-fly",
+    name: "Dumbbell Fly",
+    category: "chest",
+    muscleGroups: ["Pectorals", "Anterior Deltoids"],
+    description:
+      "A flat bench chest isolation exercise using dumbbells in a wide arc motion. Unlike pressing movements, flies keep the elbows at a constant angle and emphasize the chest stretch at the bottom of each rep.",
+    instructions: [
+      "Lie on flat bench, dumbbells held above chest with slight elbow bend",
+      "Lower dumbbells out to the sides in a wide arc",
+      "Stop when you feel a full chest stretch (roughly ear level)",
+      "Squeeze dumbbells back together overhead in the same arc",
+    ],
+    frames: [
+      { label: "Top", description: "Dumbbells above chest, slight elbow bend" },
+      { label: "Open", description: "Arms sweeping outward and down" },
+      { label: "Stretch", description: "Full pec stretch, dumbbells at chest level" },
+    ],
+    youtubeIds: ["eozdVDA78K0", "WMlcEiVZhzY", "QENKPHhQVi4"],
+    averages: {
+      male: { mean: 39, sd: 12, unit: "lbs" },
+      female: { mean: 20, sd: 7, unit: "lbs" },
+    },
+    tips: [
+      "Think 'hugging a tree' — maintain the same elbow angle throughout",
+      "Don't lower too far — stop at the point of full chest stretch, not beyond",
+      "Lighter weight than pressing movements; this is an isolation, not a compound lift",
+    ],
+    equipment: ["Dumbbells", "Flat Bench"],
+  },
+
+  {
+    id: "incline-dumbbell-fly",
+    name: "Incline Dumbbell Fly",
+    category: "chest",
+    muscleGroups: ["Upper Pectorals", "Anterior Deltoids"],
+    description:
+      "A dumbbell fly performed on an inclined bench targeting the upper pectoral fibers. The incline shifts the stretch and contraction to the clavicular head of the chest.",
+    instructions: [
+      "Set bench to 30–45°, lie back holding dumbbells above upper chest",
+      "Keep a slight elbow bend throughout",
+      "Lower dumbbells out to the sides until a strong upper chest stretch is felt",
+      "Bring dumbbells back together in an arc above the upper chest",
+    ],
+    frames: [
+      { label: "Top", description: "Dumbbells together above upper chest" },
+      { label: "Open", description: "Arms lowering out to sides on incline" },
+      { label: "Stretch", description: "Full upper chest stretch at bottom" },
+    ],
+    youtubeIds: ["8iPEnn-ltC8", "QNcLPEFwi7Q", "eozdVDA78K0"],
+    averages: {
+      male: { mean: 43, sd: 13, unit: "lbs" },
+      female: { mean: 23, sd: 8, unit: "lbs" },
+    },
+    tips: [
+      "Keep elbows at the same angle throughout — don't let them straighten or bend more",
+      "Focus on feeling the upper chest stretch at the bottom of each rep",
+      "Use this as a finishing exercise after heavier incline presses",
+    ],
+    equipment: ["Dumbbells", "Incline Bench"],
+  },
+
+  {
+    id: "dumbbell-kickback",
+    name: "Dumbbell Kickback",
+    category: "arms",
+    muscleGroups: ["Triceps"],
+    description:
+      "A tricep isolation exercise performed bent over, extending the forearm backward against gravity. With the upper arm held parallel to the floor, the entire load falls on the tricep throughout the range of motion.",
+    instructions: [
+      "Hinge forward to ~45°, upper arm parallel to floor and close to torso",
+      "Hold a dumbbell with elbow bent at 90°",
+      "Extend forearm straight back until arm is fully locked out",
+      "Squeeze tricep at lockout, then lower slowly",
+    ],
+    frames: [
+      { label: "Start", description: "Elbow bent 90°, upper arm parallel to floor" },
+      { label: "Extend", description: "Forearm extending backward" },
+      { label: "Lockout", description: "Arm fully straight, tricep contracted" },
+    ],
+    youtubeIds: ["6SS6K3lAwZ8", "l3WBNhiCMz4", "PwFSZhFMoq8"],
+    averages: {
+      male: { mean: 21, sd: 7, unit: "lbs" },
+      female: { mean: 11, sd: 4, unit: "lbs" },
+    },
+    tips: [
+      "Keep upper arm perfectly still — only the forearm moves",
+      "Use lighter weight than you expect; the leverage is difficult at full extension",
+      "Pause and squeeze at lockout to maximize tricep activation",
+    ],
+    equipment: ["Dumbbell", "Bench"],
+  },
+
+  {
+    id: "cable-bicep-curl",
+    name: "Cable Bicep Curl",
+    category: "arms",
+    muscleGroups: ["Biceps", "Brachialis"],
+    description:
+      "A bicep curl performed at a low cable pulley with a straight or EZ bar attachment. The cable provides constant tension throughout the entire range of motion, unlike free weights which have zero tension at the bottom.",
+    instructions: [
+      "Attach straight bar or EZ bar to low cable pulley",
+      "Stand close to the machine, grip bar with underhand grip",
+      "Curl bar toward chin, keeping upper arms stationary",
+      "Lower slowly, maintaining tension throughout — don't let the cable go slack",
+    ],
+    frames: [
+      { label: "Down", description: "Arms extended, cable taut at bottom" },
+      { label: "Curl", description: "Bar rising, elbows stationary" },
+      { label: "Top", description: "Full contraction, cable still under tension" },
+    ],
+    youtubeIds: ["NFzTWp2qpiE", "av7-8igSXTs", "ykJmrZ5v0Oo"],
+    averages: {
+      male: { mean: 71, sd: 22, unit: "lbs" },
+      female: { mean: 35, sd: 12, unit: "lbs" },
+    },
+    tips: [
+      "Cable provides tension even at the bottom — maximizing time under tension vs. free weights",
+      "Lean slightly back to get a better peak contraction at the top",
+      "Great drop-set tool — easily adjust weight between sets",
+    ],
+    equipment: ["Cable Machine", "Straight Bar or EZ Bar"],
+  },
+
+  {
+    id: "straight-arm-pulldown",
+    name: "Straight Arm Pulldown",
+    category: "back",
+    muscleGroups: ["Latissimus Dorsi", "Teres Major", "Core"],
+    description:
+      "A cable exercise that isolates the lats without significant bicep involvement. Keeping the arms straight throughout, you pull a high cable down in a sweeping arc, making it one of the best pure lat isolation movements.",
+    instructions: [
+      "Stand at a high cable pulley, grip rope or bar with arms extended overhead",
+      "Slight forward lean, core braced",
+      "Pull the attachment down to your thighs in a wide arc, arms staying straight",
+      "Squeeze lats at the bottom, then let arms rise back slowly",
+    ],
+    frames: [
+      { label: "Up", description: "Arms extended overhead, slight forward lean" },
+      { label: "Pull", description: "Arms sweeping down in an arc" },
+      { label: "Bottom", description: "Attachment at thighs, lats fully contracted" },
+    ],
+    youtubeIds: ["8HCGQ7VljLY", "iK0saGXnFT4", "lueScQ8bksc"],
+    averages: {
+      male: { mean: 95, sd: 30, unit: "lbs" },
+      female: { mean: 43, sd: 14, unit: "lbs" },
+    },
+    tips: [
+      "Arms must stay straight — bending the elbows shifts the work to the biceps",
+      "Think about pulling your elbows to your hips in an arc",
+      "Excellent as a warm-up to activate lats before heavy pulling exercises",
+    ],
+    equipment: ["Cable Machine", "Rope or Bar"],
+  },
+
+  {
+    id: "seated-leg-curl",
+    name: "Seated Leg Curl",
+    category: "legs",
+    muscleGroups: ["Hamstrings", "Gastrocnemius"],
+    description:
+      "A hamstring isolation exercise performed on a seated leg curl machine. The seated position places the hamstrings in a pre-stretched position (hip flexed), allowing greater muscle fiber activation than the lying variation.",
+    instructions: [
+      "Sit in machine, back pad against your back, ankle pad on lower shins",
+      "Hold the side handles and curl both legs under the seat",
+      "Bring heels toward the seat as far as possible",
+      "Return slowly under control to full extension",
+    ],
+    frames: [
+      { label: "Extended", description: "Legs out straight, hamstrings pre-stretched" },
+      { label: "Curl", description: "Heels moving toward seat" },
+      { label: "Contracted", description: "Full hamstring contraction under seat" },
+    ],
+    youtubeIds: ["1Tq3QdYUuHs", "ELOCsoDSmrg", "Orxowest56U"],
+    averages: {
+      male: { mean: 130, sd: 40, unit: "lbs" },
+      female: { mean: 79, sd: 26, unit: "lbs" },
+    },
+    tips: [
+      "Seated position provides greater hamstring stretch than lying — often more effective",
+      "Control the return; the eccentric is where most hypertrophy stimulus occurs",
+      "Keep your back flat against the pad throughout",
+    ],
+    equipment: ["Seated Leg Curl Machine"],
+  },
+
+  {
+    id: "hip-adductor",
+    name: "Hip Adductor Machine",
+    category: "legs",
+    muscleGroups: ["Adductors", "Inner Thigh"],
+    description:
+      "A machine exercise targeting the inner thigh adductor muscles. Seated with legs wide against padded resistance, you squeeze the legs together against the load. Essential for balanced hip and knee stability.",
+    instructions: [
+      "Sit in machine, adjust pad width so legs are comfortably spread",
+      "Grip handles for stability",
+      "Squeeze legs together against the resistance pads",
+      "Hold briefly at the close position, then let legs return slowly to the start",
+    ],
+    frames: [
+      { label: "Open", description: "Legs spread wide against pads" },
+      { label: "Close", description: "Legs squeezed together, adductors contracted" },
+    ],
+    youtubeIds: ["e_jVAkYQFvQ", "MR8M1rM6fFk", "Qr3U3bVT8Xc"],
+    averages: {
+      male: { mean: 131, sd: 41, unit: "lbs" },
+      female: { mean: 98, sd: 32, unit: "lbs" },
+    },
+    tips: [
+      "Don't bounce the weight — control every part of the rep",
+      "Perform with a slower tempo (3 seconds each way) for better muscle engagement",
+      "Pairs well with the abductor machine for balanced hip muscle development",
+    ],
+    equipment: ["Hip Adductor Machine"],
+  },
+
+  {
+    id: "hip-abductor",
+    name: "Hip Abductor Machine",
+    category: "legs",
+    muscleGroups: ["Gluteus Medius", "Abductors"],
+    description:
+      "A machine exercise that isolates the gluteus medius and outer hip muscles by pushing the legs outward against resistance. Strengthens the muscles responsible for lateral hip stability and knee health.",
+    instructions: [
+      "Sit in machine, pads against outer thighs, legs close together at start",
+      "Push both legs outward against the resistance pads",
+      "Spread legs as wide as the machine allows",
+      "Return legs slowly to the start position under control",
+    ],
+    frames: [
+      { label: "Close", description: "Legs together, ready to push out" },
+      { label: "Open", description: "Legs spread wide, glute medius contracted" },
+    ],
+    youtubeIds: ["MR8M1rM6fFk", "e_jVAkYQFvQ", "gwLzBJYoWlI"],
+    averages: {
+      male: { mean: 120, sd: 37, unit: "lbs" },
+      female: { mean: 90, sd: 29, unit: "lbs" },
+    },
+    tips: [
+      "Lean slightly forward to shift emphasis from TFL to gluteus medius",
+      "This machine directly targets knee valgus prevention — important for all athletes",
+      "Use a controlled 2-second push and 3-second return",
+    ],
+    equipment: ["Hip Abductor Machine"],
+  },
+
+  {
+    id: "turkish-getup",
+    name: "Kettlebell Turkish Get-Up",
+    category: "full-body",
+    muscleGroups: ["Core", "Shoulders", "Glutes", "Quads"],
+    description:
+      "A complex, multi-step movement where you move from lying on the floor to standing, while keeping a kettlebell pressed overhead the entire time. Develops total body stability, shoulder health, and functional movement quality.",
+    instructions: [
+      "Lie on your back, kettlebell pressed to full arm extension on one side",
+      "Roll onto the same-side elbow, then hand, keeping bell locked out",
+      "Sweep the leg under and come to a half-kneeling position",
+      "Stand up fully while maintaining the overhead lockout",
+      "Reverse each step carefully to return to the floor",
+    ],
+    frames: [
+      { label: "Lying", description: "On back, bell pressed up, knee bent" },
+      { label: "Elbow", description: "Propped on elbow, bell overhead" },
+      { label: "Bridge", description: "Hips lifted, leg sweeping under" },
+      { label: "Stand", description: "Fully upright, bell locked out overhead" },
+    ],
+    youtubeIds: ["0bCKT7SxyOk", "2FAs7k_F0I4", "Vb3VRE1KQVY"],
+    averages: {
+      male: { mean: 26, sd: 10, unit: "lbs" },
+      female: { mean: 14, sd: 6, unit: "lbs" },
+    },
+    tips: [
+      "Keep your eyes on the kettlebell throughout the entire movement",
+      "Master the movement pattern with no weight before loading",
+      "Move slowly and deliberately — this is a skill movement, not a conditioning exercise",
+    ],
+    equipment: ["Kettlebell"],
+  },
+
+  {
+    id: "bicycle-crunch",
+    name: "Bicycle Crunch",
+    category: "core",
+    muscleGroups: ["Obliques", "Rectus Abdominis", "Hip Flexors"],
+    description:
+      "A dynamic ab exercise combining a crunch with a pedaling leg motion. By rotating the torso toward alternating knees, this move targets the obliques more directly than a standard crunch.",
+    instructions: [
+      "Lie on your back, hands behind head, knees bent",
+      "Raise shoulder blades off the floor",
+      "Bring right elbow toward left knee while extending right leg",
+      "Alternate sides in a smooth, controlled pedaling motion",
+    ],
+    frames: [
+      { label: "Start", description: "Shoulders raised, knees up" },
+      { label: "Rotate", description: "Elbow driving toward opposite knee" },
+      { label: "Switch", description: "Alternating to other side" },
+    ],
+    youtubeIds: ["9FGilxCbdz8", "Iwyvozckjak", "wkD8rjkodUI"],
+    averages: {
+      male: { mean: 25, sd: 10, unit: "reps" },
+      female: { mean: 20, sd: 8, unit: "reps" },
+    },
+    tips: [
+      "Don't pull on your neck — hands are guides, not a cradle",
+      "Slow down the rotation to increase difficulty and reduce hip flexor dominance",
+      "Focus on rotating the torso, not just swinging the elbow",
+    ],
+    equipment: ["Bodyweight"],
+  },
+
+  {
+    id: "dead-bug",
+    name: "Dead Bug",
+    category: "core",
+    muscleGroups: ["Transverse Abdominis", "Core Stability"],
+    description:
+      "A core stability exercise performed lying on your back with arms and legs in the air. By lowering opposite limbs while maintaining a pressed lower back, it trains anti-extension core stability without spinal loading.",
+    instructions: [
+      "Lie on back, arms extended to ceiling, knees bent at 90° in the air",
+      "Press your lower back firmly into the floor and hold it there",
+      "Slowly lower one arm and the opposite leg toward the floor",
+      "Return to start and repeat on the other side",
+    ],
+    frames: [
+      { label: "Start", description: "Arms and legs in air, lower back pressed down" },
+      { label: "Extend", description: "Opposite arm and leg lowering toward floor" },
+      { label: "Return", description: "Limbs returning to start position" },
+    ],
+    youtubeIds: ["4XLEnwUr1d8", "g_BYB0R-4Ws", "G_I1V0zYb-4"],
+    averages: {
+      male: { mean: 12, sd: 5, unit: "reps" },
+      female: { mean: 10, sd: 4, unit: "reps" },
+    },
+    tips: [
+      "The lower back must stay glued to the floor throughout — if it lifts, you've gone too far",
+      "Breathe out as you extend; this helps keep the core braced",
+      "Move slowly — this is about stability, not speed",
+    ],
+    equipment: ["Bodyweight"],
+  },
+
+  {
+    id: "landmine-press",
+    name: "Landmine Press",
+    category: "shoulders",
+    muscleGroups: ["Shoulders", "Upper Chest", "Triceps", "Core"],
+    description:
+      "An overhead pressing movement using a barbell anchored in a landmine attachment. The arc of the bar's path makes it a shoulder-friendly alternative to strict overhead pressing, combining upper chest and shoulder recruitment.",
+    instructions: [
+      "Anchor barbell in a landmine attachment or corner",
+      "Hold the sleeve end of the bar at shoulder height with one or both hands",
+      "Press upward and forward along the bar's arc until arm is extended",
+      "Return under control to shoulder height",
+    ],
+    frames: [
+      { label: "Start", description: "Bar at shoulder, elbow tucked" },
+      { label: "Press", description: "Bar moving up and forward in arc" },
+      { label: "Lockout", description: "Arm extended, bar high and forward" },
+    ],
+    youtubeIds: ["nFgvKTeXgFk", "F3RM7Bj9SE0", "TiHzDYmBBT0"],
+    averages: {
+      male: { mean: 60, sd: 18, unit: "lbs" },
+      female: { mean: 30, sd: 10, unit: "lbs" },
+    },
+    tips: [
+      "Great for those with shoulder issues who cannot do strict overhead press",
+      "Single-arm pressing challenges the core anti-rotation stability significantly",
+      "The arc path naturally avoids shoulder impingement for most people",
+    ],
+    equipment: ["Barbell", "Landmine Attachment"],
+  },
+
+  {
+    id: "renegade-row",
+    name: "Renegade Row",
+    category: "full-body",
+    muscleGroups: ["Back", "Core", "Biceps", "Shoulders"],
+    description:
+      "A combination push-up and dumbbell row performed in a plank position. Each arm alternates rowing while the other supports a plank, demanding extreme anti-rotation core strength alongside back development.",
+    instructions: [
+      "Start in a push-up position with hands gripping two dumbbells",
+      "Keep hips square to the floor and core tight",
+      "Row one dumbbell to your hip while the other arm supports your weight",
+      "Place it down and row the other side — that's one rep",
+    ],
+    frames: [
+      { label: "Plank", description: "High plank on dumbbells, hips level" },
+      { label: "Row", description: "One dumbbell pulled to hip, other arm supporting" },
+      { label: "Switch", description: "Other arm performing the row" },
+    ],
+    youtubeIds: ["Wk5DKLKoMZY", "7ZCsP0jMJo0", "xl_jhfE4GCA"],
+    averages: {
+      male: { mean: 30, sd: 10, unit: "lbs" },
+      female: { mean: 15, sd: 6, unit: "lbs" },
+    },
+    tips: [
+      "Wider foot stance makes balancing easier; narrow stance increases core difficulty",
+      "Move slowly and avoid twisting the hips during the row",
+      "Can add a push-up between each row for increased volume",
+    ],
+    equipment: ["Dumbbells"],
+  },
+
+  {
+    id: "machine-hip-thrust",
+    name: "Machine Hip Thrust",
+    category: "legs",
+    muscleGroups: ["Glutes", "Hamstrings"],
+    description:
+      "A hip thrust performed on a dedicated hip thrust machine, providing constant resistance throughout the movement without the need to load and position a barbell. Allows for easier setup and smooth glute isolation.",
+    instructions: [
+      "Sit in the machine with your back against the pad, feet on platform",
+      "Position the thigh pad securely across your upper thighs",
+      "Drive hips upward to full extension, squeezing glutes hard at the top",
+      "Lower under control and repeat",
+    ],
+    frames: [
+      { label: "Down", description: "Hips lowered, thigh pad in contact" },
+      { label: "Drive", description: "Hips rising, glutes engaging" },
+      { label: "Top", description: "Full hip extension, glutes maximally contracted" },
+    ],
+    youtubeIds: ["SEdqd9cFOcY", "Zp26q4BY5HE", "PH2FGjKFd7o"],
+    averages: {
+      male: { mean: 188, sd: 58, unit: "lbs" },
+      female: { mean: 131, sd: 43, unit: "lbs" },
+    },
+    tips: [
+      "Squeeze the glutes at the top for a 1–2 second hold to maximize activation",
+      "Foot position matters — flat-footed engages glutes more than toes-raised",
+      "Chin tucked to avoid neck hyperextension at the top",
+    ],
+    equipment: ["Hip Thrust Machine"],
+  },
+
+  {
+    id: "seated-calf-raise",
+    name: "Seated Calf Raise",
+    category: "legs",
+    muscleGroups: ["Soleus", "Gastrocnemius"],
+    description:
+      "A calf raise performed seated with knees bent, which places the gastrocnemius in a shortened position and therefore shifts the majority of the work to the soleus — the deep calf muscle that adds thickness.",
+    instructions: [
+      "Sit in the machine, place knees under the pads, balls of feet on the platform",
+      "Lower heels as far as comfortable for a full stretch",
+      "Press up onto tiptoes as high as possible",
+      "Hold briefly at the top, then lower slowly",
+    ],
+    frames: [
+      { label: "Stretch", description: "Heels down, full soleus stretch" },
+      { label: "Rise", description: "On tiptoes, soleus contracted" },
+    ],
+    youtubeIds: ["JbyjNymZOt0", "YMmgqO8-Gts", "gwLzBJYoWlI"],
+    averages: {
+      male: { mean: 140, sd: 43, unit: "lbs" },
+      female: { mean: 74, sd: 24, unit: "lbs" },
+    },
+    tips: [
+      "The seated position specifically targets the soleus, unlike standing raises",
+      "Full range of motion is critical — partial reps are far less effective",
+      "Calves respond well to high reps (15–20) and slow tempos",
+    ],
+    equipment: ["Seated Calf Raise Machine"],
+  },
+
+  {
+    id: "dumbbell-rdl",
+    name: "Dumbbell Romanian Deadlift",
+    category: "legs",
+    muscleGroups: ["Hamstrings", "Glutes", "Lower Back"],
+    description:
+      "A hip-hinge movement with dumbbells that emphasizes the hamstrings and glutes through a loaded stretch. More accessible than the barbell version and allows natural hand positioning.",
+    instructions: [
+      "Stand holding dumbbells in front of thighs, slight knee bend",
+      "Hinge at hips, pushing them back as dumbbells slide down your legs",
+      "Lower until you feel a strong hamstring stretch, maintaining a flat back",
+      "Drive hips forward to return to standing",
+    ],
+    frames: [
+      { label: "Stand", description: "Upright, dumbbells at thighs" },
+      { label: "Hinge", description: "Hips pushed back, dumbbells at knees" },
+      { label: "Stretch", description: "Maximum hamstring stretch, back flat" },
+    ],
+    youtubeIds: ["JCXUYuzwNrM", "EBwukh3GnJA", "7rl7IQOQ8oM"],
+    averages: {
+      male: { mean: 68, sd: 21, unit: "lbs" },
+      female: { mean: 43, sd: 14, unit: "lbs" },
+    },
+    tips: [
+      "Keep dumbbells close to your legs throughout — think shaving your shins",
+      "Stop the descent when your lower back starts to round, not based on dumbbell height",
+      "Great alternative to barbell RDL for those with limited barbell access",
+    ],
+    equipment: ["Dumbbells"],
+  },
+
+  {
+    id: "pendlay-row",
+    name: "Pendlay Row",
+    category: "back",
+    muscleGroups: ["Latissimus Dorsi", "Rhomboids", "Biceps", "Rear Deltoids"],
+    description:
+      "A strict barbell row variation where the bar starts and ends on the floor each rep. The horizontal torso position and dead-stop from the floor eliminate momentum, building explosive back strength and raw pulling power.",
+    instructions: [
+      "Hinge to a near-horizontal torso, bar on the floor below your chest",
+      "Take a double-overhand grip, shoulder-width",
+      "Explosively row the bar to your lower sternum in one powerful pull",
+      "Lower bar back to the floor under control — full dead stop each rep",
+    ],
+    frames: [
+      { label: "Set", description: "Horizontal torso, bar on floor" },
+      { label: "Pull", description: "Explosive row to lower chest" },
+      { label: "Reset", description: "Bar returned to floor, reset posture" },
+    ],
+    youtubeIds: ["G8l_8chR5BE", "kBWAon7ItDw", "vT2GjY_Umpw"],
+    averages: {
+      male: { mean: 137, sd: 43, unit: "lbs" },
+      female: { mean: 71, sd: 23, unit: "lbs" },
+    },
+    tips: [
+      "The horizontal torso is strict — any rise in the hips becomes a standard row",
+      "The dead stop from the floor prevents the momentum cheating common in regular rows",
+      "Excellent for powerlifters and those wanting to build raw back strength",
+    ],
+    equipment: ["Barbell"],
+  },
+
+  {
+    id: "cable-overhead-tricep",
+    name: "Cable Overhead Tricep Extension",
+    category: "arms",
+    muscleGroups: ["Triceps (long head)"],
+    description:
+      "A tricep extension performed with a rope attachment on a low cable pulley, extending the arms overhead. The overhead position stretches the long head of the tricep, producing superior long-head activation compared to pushdowns.",
+    instructions: [
+      "Attach rope to a low cable, face away from the machine",
+      "Step forward and hold rope behind your head, elbows pointed at the ceiling",
+      "Extend forearms upward until arms are fully locked out overhead",
+      "Lower slowly, feeling the long-head stretch before the next rep",
+    ],
+    frames: [
+      { label: "Down", description: "Rope behind head, elbows bent and high" },
+      { label: "Extend", description: "Forearms rising overhead" },
+      { label: "Lockout", description: "Arms fully extended, triceps contracted" },
+    ],
+    youtubeIds: ["_gsUck-7M74", "YbX7Wd8jQ-Q", "6SS6K3lAwZ8"],
+    averages: {
+      male: { mean: 64, sd: 20, unit: "lbs" },
+      female: { mean: 32, sd: 11, unit: "lbs" },
+    },
+    tips: [
+      "Keep elbows close to your head — flaring elbows reduces tricep isolation",
+      "The long head is best trained in the stretched position, making this superior to pushdowns for size",
+      "Cable constant tension means the tricep is loaded throughout the full range",
+    ],
+    equipment: ["Cable Machine", "Rope"],
+  },
+
+  {
+    id: "v-up",
+    name: "V-Up",
+    category: "core",
+    muscleGroups: ["Rectus Abdominis", "Hip Flexors"],
+    description:
+      "A challenging bodyweight core exercise where you simultaneously raise your arms and legs to meet at the top, forming a 'V' shape. Requires strong hip flexors and rectus abdominis working together.",
+    instructions: [
+      "Lie flat on your back, arms extended overhead, legs straight",
+      "Simultaneously raise both legs and both arms toward each other",
+      "Try to touch your toes or shins at the top of the movement",
+      "Lower back down with control, keeping arms and legs off the floor",
+    ],
+    frames: [
+      { label: "Flat", description: "Lying extended, arms and legs above floor" },
+      { label: "Rise", description: "Arms and legs converging" },
+      { label: "V Shape", description: "Hands near toes at peak" },
+    ],
+    youtubeIds: ["iP2fjvG0g3w", "7UGJoSVRDkA", "Pr1ieGZ5atk"],
+    averages: {
+      male: { mean: 15, sd: 6, unit: "reps" },
+      female: { mean: 10, sd: 4, unit: "reps" },
+    },
+    tips: [
+      "Keep arms and legs straight throughout — bending them is a regression",
+      "If you can't reach your toes, meet as close as your flexibility allows",
+      "Control the lowering phase — don't let limbs crash to the floor",
+    ],
+    equipment: ["Bodyweight"],
+  },
+
+  {
+    id: "glute-bridge",
+    name: "Glute Bridge",
+    category: "legs",
+    muscleGroups: ["Glutes", "Hamstrings"],
+    description:
+      "A floor-based glute activation exercise. Lying on your back with knees bent, you drive your hips upward by contracting the glutes. More accessible than a hip thrust and excellent for glute activation and rehab.",
+    instructions: [
+      "Lie on your back, knees bent, feet flat on the floor hip-width apart",
+      "Drive hips upward by squeezing glutes hard",
+      "At the top, body forms a straight line from shoulders to knees",
+      "Hold at the top for 1–2 seconds, then lower slowly",
+    ],
+    frames: [
+      { label: "Flat", description: "Lying on back, knees bent, feet flat" },
+      { label: "Drive", description: "Hips rising, glutes squeezing" },
+      { label: "Top", description: "Hips fully extended, body straight from shoulder to knee" },
+    ],
+    youtubeIds: ["OUgsJ8-Vi0E", "Zp26q4BY5HE", "PH2FGjKFd7o"],
+    averages: {
+      male: { mean: 22, sd: 8, unit: "reps" },
+      female: { mean: 18, sd: 6, unit: "reps" },
+    },
+    tips: [
+      "Drive through your heels — not your toes — to maximize glute activation",
+      "Squeeze at the top and hold for a full second on each rep",
+      "Progress by adding a barbell across the hips to transition toward hip thrusts",
+    ],
+    equipment: ["Bodyweight"],
+  },
+
+  {
+    id: "cable-pull-through",
+    name: "Cable Pull-Through",
+    category: "legs",
+    muscleGroups: ["Glutes", "Hamstrings", "Lower Back"],
+    description:
+      "A hip-hinge exercise using a cable machine with a rope attachment pulled between the legs. It builds the hip extension pattern used in deadlifts and hip thrusts, with constant cable tension on the glutes and hamstrings.",
+    instructions: [
+      "Face away from a low cable pulley, grip rope between your legs",
+      "Walk forward until there is tension on the cable",
+      "Hinge at hips, pushing them back while rope follows between legs",
+      "Drive hips forward explosively to stand tall, rope swinging forward",
+    ],
+    frames: [
+      { label: "Hinge", description: "Hips back, torso forward, rope behind" },
+      { label: "Drive", description: "Hips extending forward" },
+      { label: "Stand", description: "Fully upright, hips locked out" },
+    ],
+    youtubeIds: ["pWBEwXBJJoE", "mKDIuUbH94k", "sSESeQAir2M"],
+    averages: {
+      male: { mean: 86, sd: 27, unit: "lbs" },
+      female: { mean: 49, sd: 16, unit: "lbs" },
+    },
+    tips: [
+      "Focus on the hip hinge — not a squat; hips go back, not down",
+      "The cable provides constant tension even at the top, unlike a barbell deadlift",
+      "Great teaching tool for learning the hip hinge pattern before loading the barbell",
+    ],
+    equipment: ["Cable Machine", "Rope"],
+  },
+
+  {
+    id: "zottman-curl",
+    name: "Zottman Curl",
+    category: "arms",
+    muscleGroups: ["Biceps", "Brachioradialis", "Forearms"],
+    description:
+      "A dumbbell curl with a grip rotation: you curl up with a supinated (palms up) grip and lower with a pronated (palms down) grip. This hits the biceps on the way up and the brachioradialis and forearms on the way down.",
+    instructions: [
+      "Stand holding dumbbells at sides with supinated (palms-up) grip",
+      "Curl both dumbbells up toward your shoulders",
+      "At the top, rotate wrists to a pronated (palms-down) grip",
+      "Lower slowly with the pronated grip, then rotate back to supinated at the bottom",
+    ],
+    frames: [
+      { label: "Down", description: "Arms extended, supinated grip" },
+      { label: "Up", description: "Dumbbells at shoulder, palms up" },
+      { label: "Rotate", description: "Grip rotates to pronated at top" },
+      { label: "Lower", description: "Lowering with pronated grip" },
+    ],
+    youtubeIds: ["zC3nLlEvin4", "TwD-YGVP4Bk", "r27J9X3KBAQ"],
+    averages: {
+      male: { mean: 24, sd: 8, unit: "lbs" },
+      female: { mean: 12, sd: 4, unit: "lbs" },
+    },
+    tips: [
+      "Lower slowly on the pronated phase — this is where the forearm work happens",
+      "Use lighter weight than regular curls; the pronated lowering is significantly harder",
+      "Excellent for building complete arm development with a single exercise",
+    ],
+    equipment: ["Dumbbells"],
   },
 ];
 

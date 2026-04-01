@@ -39,30 +39,30 @@ export default function CreateGroupModal({ onClose }: Props) {
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
       <div className="modal-overlay absolute inset-0 bg-black/50" onClick={onClose} />
-      <div className="modal-panel relative bg-white border border-gray-100 rounded-t-2xl sm:rounded-2xl p-5 sm:p-6 w-full sm:max-w-sm shadow-xl">
+      <div className="modal-panel relative bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-t-2xl sm:rounded-2xl p-5 sm:p-6 w-full sm:max-w-sm shadow-xl">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-1.5 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+          className="absolute top-4 right-4 p-1.5 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           <X className="w-4 h-4" />
         </button>
 
         {mode === "pick" ? (
           <>
-            <h2 className="font-semibold text-gray-900 mb-1">Add a Workout</h2>
-            <p className="text-xs text-gray-500 mb-5">Start from a premade routine or build your own.</p>
+            <h2 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Add a Workout</h2>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-5">Start from a premade routine or build your own.</p>
 
             <div className="space-y-3">
               <button
                 onClick={() => setMode("routine")}
-                className="w-full flex items-start gap-4 p-4 bg-indigo-50 border border-indigo-200 rounded-xl hover:bg-indigo-100/70 hover:border-indigo-300 transition-all text-left group"
+                className="w-full flex items-start gap-4 p-4 bg-indigo-50 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 rounded-xl hover:bg-indigo-100/70 dark:hover:bg-indigo-900 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all text-left group"
               >
-                <div className="p-2 bg-indigo-100 rounded-lg group-hover:bg-indigo-200 transition-colors flex-shrink-0">
-                  <Zap className="w-5 h-5 text-indigo-600" />
+                <div className="p-2 bg-indigo-100 dark:bg-indigo-900 rounded-lg group-hover:bg-indigo-200 dark:group-hover:bg-indigo-800 transition-colors flex-shrink-0">
+                  <Zap className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 text-sm">Browse Routines</p>
-                  <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm">Browse Routines</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">
                     Pick from 6 expert-designed plans (PPL, Upper/Lower, Bro Split and more). All exercises are added automatically.
                   </p>
                 </div>
@@ -70,14 +70,14 @@ export default function CreateGroupModal({ onClose }: Props) {
 
               <button
                 onClick={() => setMode("custom")}
-                className="w-full flex items-start gap-4 p-4 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 hover:border-gray-300 transition-all text-left group"
+                className="w-full flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all text-left group"
               >
-                <div className="p-2 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors flex-shrink-0">
-                  <PenLine className="w-5 h-5 text-gray-600" />
+                <div className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-600 transition-colors flex-shrink-0">
+                  <PenLine className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 text-sm">Custom Group</p>
-                  <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm">Custom Group</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">
                     Create a blank workout group with your own name and days, then drag exercises into it from the library.
                   </p>
                 </div>
@@ -88,29 +88,29 @@ export default function CreateGroupModal({ onClose }: Props) {
           <>
             <button
               onClick={() => setMode("pick")}
-              className="text-xs text-gray-400 hover:text-gray-600 mb-4 flex items-center gap-1 transition-colors"
+              className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 mb-4 flex items-center gap-1 transition-colors"
             >
               ← Back
             </button>
-            <h2 className="font-semibold text-gray-900 mb-5 flex items-center gap-2">
+            <h2 className="font-semibold text-gray-900 dark:text-gray-100 mb-5 flex items-center gap-2">
               <PenLine className="w-4 h-4 text-gray-400" /> Custom Workout Group
             </h2>
 
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">Group Name</label>
+                <label className="block text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-2">Group Name</label>
                 <input
                   autoFocus
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleCreate()}
                   placeholder="e.g. Push Day, Leg Day, Full Body A..."
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 text-sm"
+                  className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-indigo-400 dark:focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 text-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">Days of Week</label>
+                <label className="block text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-2">Days of Week</label>
                 <div className="flex gap-1">
                   {DAY_LABELS.map((label, d) => (
                     <button
@@ -119,7 +119,7 @@ export default function CreateGroupModal({ onClose }: Props) {
                       className={`flex-1 py-2 rounded-xl text-xs font-medium transition-colors ${
                         days.includes(d)
                           ? "bg-indigo-600 text-white"
-                          : "bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-600"
+                          : "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-600 dark:hover:text-gray-300"
                       }`}
                     >
                       {label.slice(0, 2)}
@@ -131,7 +131,7 @@ export default function CreateGroupModal({ onClose }: Props) {
               <div className="flex gap-3 pt-1">
                 <button
                   onClick={() => setMode("pick")}
-                  className="flex-1 py-2.5 rounded-xl border border-gray-200 text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors text-sm"
+                  className="flex-1 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm"
                 >
                   Back
                 </button>

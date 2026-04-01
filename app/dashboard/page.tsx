@@ -40,7 +40,6 @@ export default function DashboardPage() {
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } })
   );
 
-  // Use pointerWithin first (precise), fall back to closestCenter for empty space
   function collisionDetection(args: Parameters<typeof closestCenter>[0]) {
     const pointerHits = pointerWithin(args);
     if (pointerHits.length > 0) return pointerHits;
@@ -92,7 +91,6 @@ export default function DashboardPage() {
     }
   }
 
-  // Find active group or exercise for the overlay
   const activeGroup = activeType === "group"
     ? workoutGroups?.find((g) => g._id === activeId)
     : null;
@@ -109,32 +107,28 @@ export default function DashboardPage() {
 
   if (user === undefined || workoutGroups === undefined) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
         <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <Navbar user={user} />
 
       {needsOnboarding && (
-        <ProfileModal
-          existing={user?.profile}
-          onClose={() => {}}
-          isOnboarding
-        />
+        <ProfileModal existing={user?.profile} onClose={() => {}} isOnboarding />
       )}
 
       <main className="max-w-7xl mx-auto px-4 py-8 pb-24 sm:pb-8 page-enter">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <LayoutDashboard className="w-6 h-6 text-indigo-600" />
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+              <LayoutDashboard className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
               My Dashboard
             </h1>
-            <p className="text-gray-500 text-sm mt-1">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
               Organize your workout routines and track your exercises
             </p>
           </div>
@@ -149,11 +143,11 @@ export default function DashboardPage() {
 
         {workoutGroups.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-24 text-center">
-            <div className="p-6 bg-white border border-gray-200 rounded-3xl mb-6 shadow-sm">
-              <Dumbbell className="w-12 h-12 text-gray-300 mx-auto" />
+            <div className="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl mb-6 shadow-sm">
+              <Dumbbell className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto" />
             </div>
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">No workout groups yet</h2>
-            <p className="text-gray-500 text-sm mb-6 max-w-sm">
+            <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No workout groups yet</h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6 max-w-sm">
               Create workout groups to organize your exercises by day or routine. Browse exercises
               to pin them to your library first.
             </p>
@@ -185,12 +179,12 @@ export default function DashboardPage() {
 
             <DragOverlay dropAnimation={null}>
               {activeGroup && (
-                <div className="bg-white border-2 border-indigo-400 rounded-2xl p-3 shadow-2xl rotate-1 opacity-95 w-64">
+                <div className="bg-white dark:bg-gray-900 border-2 border-indigo-400 rounded-2xl p-3 shadow-2xl rotate-1 opacity-95 w-64">
                   <div className="flex items-center gap-2 mb-2">
                     <GripVertical className="w-4 h-4 text-indigo-400" />
-                    <p className="font-semibold text-sm text-gray-900 truncate">{activeGroup.title}</p>
+                    <p className="font-semibold text-sm text-gray-900 dark:text-gray-100 truncate">{activeGroup.title}</p>
                   </div>
-                  <p className="text-[10px] text-gray-400 ml-6">
+                  <p className="text-[10px] text-gray-400 dark:text-gray-500 ml-6">
                     {activeGroup.exercises.length} exercise{activeGroup.exercises.length !== 1 ? "s" : ""}
                   </p>
                 </div>
@@ -199,17 +193,17 @@ export default function DashboardPage() {
                 const ex = getExercise(activeExercise.pinned.exerciseId);
                 if (!ex) return null;
                 return (
-                  <div className="flex items-center gap-2 bg-white border-2 border-indigo-400 rounded-xl p-2.5 shadow-2xl rotate-1 opacity-95 w-52">
+                  <div className="flex items-center gap-2 bg-white dark:bg-gray-900 border-2 border-indigo-400 rounded-xl p-2.5 shadow-2xl rotate-1 opacity-95 w-52">
                     <GripVertical className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-gray-900 truncate">{ex.name}</p>
+                      <p className="text-xs font-semibold text-gray-900 dark:text-gray-100 truncate">{ex.name}</p>
                       <div className="flex items-center gap-2 mt-0.5">
                         {activeExercise.pinned.resistance !== undefined && (
-                          <span className="text-[10px] text-emerald-600">
+                          <span className="text-[10px] text-emerald-600 dark:text-emerald-400">
                             {activeExercise.pinned.resistance} {activeExercise.pinned.resistanceUnit ?? "lbs"}
                           </span>
                         )}
-                        <span className="text-[10px] text-indigo-600 font-medium">
+                        <span className="text-[10px] text-indigo-600 dark:text-indigo-400 font-medium">
                           {activeExercise.pinned.sets ?? 3}×{activeExercise.pinned.reps ?? "—"}
                         </span>
                       </div>
