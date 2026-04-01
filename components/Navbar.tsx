@@ -177,7 +177,7 @@ export default function Navbar({ user }: Props) {
       </nav>
 
       {/* ── Mobile bottom tab bar ─────────────────────────────────────── */}
-      <nav className="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+      <nav className="mobile-nav-bar sm:hidden inset-x-0 z-40 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
         <div className="flex">
           {NAV_LINKS.map((l) => {
             const active = pathname === l.href;

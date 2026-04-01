@@ -17,6 +17,21 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: system-ui, -apple-system, sans-serif;
+  /* Prevent elastic overscroll bounce on iOS */
+  overscroll-behavior-y: none;
+}
+
+/* Fix mobile browser chrome causing fixed footer to jump on scroll */
+@media (max-width: 639px) {
+  .mobile-nav-bar {
+    position: fixed;
+    bottom: 0;
+    /* Use transform to force GPU compositing — prevents jump when browser chrome shows/hides */
+    transform: translateZ(0);
+    will-change: transform;
+    /* Account for iOS home indicator */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }
 
 /* Custom scrollbar */
