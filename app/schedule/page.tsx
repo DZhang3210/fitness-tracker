@@ -5,7 +5,7 @@ import { useQuery, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { Calendar, Dumbbell, CheckCircle2, Circle, Trophy, Moon, History } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import PageShell from "@/components/PageShell";
 import ProfileModal from "@/components/ProfileModal";
 import ScheduleHistoryModal from "@/components/ScheduleHistoryModal";
 import { getExercise } from "@/lib/exercises";
@@ -251,8 +251,7 @@ export default function SchedulePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
-      <Navbar user={user} />
+    <PageShell user={user}>
       <Confetti active={confettiActive} />
 
       {needsOnboarding && (
@@ -385,6 +384,6 @@ export default function SchedulePage() {
         <ProfileModal existing={user?.profile} onClose={() => setShowProfileModal(false)} />
       )}
       {showHistory && <ScheduleHistoryModal onClose={() => setShowHistory(false)} />}
-    </div>
+    </PageShell>
   );
 }

@@ -5,7 +5,7 @@ import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { Search, ChevronDown, ChevronUp } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import PageShell from "@/components/PageShell";
 import ExerciseCard from "@/components/ExerciseCard";
 import PinExerciseModal from "@/components/PinExerciseModal";
 import StatsModal from "@/components/StatsModal";
@@ -86,9 +86,7 @@ export default function ExercisesPage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
-      <Navbar user={user} />
-
+    <PageShell user={user}>
       {needsOnboarding && (
         <ProfileModal existing={user?.profile} onClose={() => {}} isOnboarding />
       )}
@@ -248,6 +246,6 @@ export default function ExercisesPage() {
       {showProfileModal && (
         <ProfileModal existing={user?.profile} onClose={() => setShowProfileModal(false)} />
       )}
-    </div>
+    </PageShell>
   );
 }

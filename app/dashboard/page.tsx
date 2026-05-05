@@ -20,7 +20,7 @@ import {
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import { Plus, Dumbbell, LayoutDashboard, GripVertical } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import PageShell from "@/components/PageShell";
 import WorkoutGroupCard from "@/components/WorkoutGroupCard";
 import CreateGroupModal from "@/components/CreateGroupModal";
 import ProfileModal from "@/components/ProfileModal";
@@ -114,9 +114,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
-      <Navbar user={user} />
-
+    <PageShell user={user}>
       {needsOnboarding && (
         <ProfileModal existing={user?.profile} onClose={() => {}} isOnboarding />
       )}
@@ -217,6 +215,6 @@ export default function DashboardPage() {
       </main>
 
       {showCreateGroup && <CreateGroupModal onClose={() => setShowCreateGroup(false)} />}
-    </div>
+    </PageShell>
   );
 }
